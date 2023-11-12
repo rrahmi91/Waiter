@@ -38,5 +38,4 @@ public abstract class User {
         this.role = role;
     }
 
-    public abstract void changeOrderStatus(String status);  // TODO: 12.11.2023 г. Тука трябва да се подава статуса на класа Order
 }

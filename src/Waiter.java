@@ -1,4 +1,4 @@
-public class Waiter extends User implements Addable{
+public class Waiter extends User implements Addable,Changeable{
     public Waiter(String userName, String password, String role) {
         super(userName, password, role);
     }
