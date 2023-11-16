@@ -12,10 +12,10 @@ public class Waiter extends User implements Addable,Changeable{
 
     }
 
-    public static void createOrder(){
+    public void createOrder(){
 
     }
-    public static void finishOrder(){
+    public void finishOrder(){
 
     }
 
