@@ -1,11 +1,11 @@
 public abstract class Dish extends Product {
-   protected String quantityUnit;
-   protected String name;
+    protected String name;
+    protected String quantityUnit;
 
-    public Dish(String quantityUnit, String name, double price) {
-        this.quantityUnit = quantityUnit;
+    public Dish(String name, int quantity, String quantityUnit, double price) {
         this.name = name;
-        super(price);
+        this.quantityUnit = quantityUnit;
+        super(quantity, price);
     }
 
     public String getQuantityUnit() {

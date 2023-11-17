@@ -1,8 +1,8 @@
 public abstract class Drinks extends Product {
-    String brand;
-    String quantityUnit;
+    protected String brand;
+    protected String quantityUnit;
 
-    public Drinks(String brand, String quantityUnit, double price) {
+    public Drinks(String brand, int quantity, String quantityUnit, double price) {
         this.brand = brand;
         this.quantityUnit = quantityUnit;
         super(price);
