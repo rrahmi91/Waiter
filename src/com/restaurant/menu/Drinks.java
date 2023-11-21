@@ -1,11 +1,13 @@
+package com.restaurant.menu;
+
 public abstract class Drinks extends Product {
     protected String brand;
     protected String quantityUnit;
 
     Drinks(String brand, int quantity, String quantityUnit, double price) {
+        super(quantity, price);
         this.brand = brand;
         this.quantityUnit = quantityUnit;
-        super(price);
     }
 
     public String getBrand() {

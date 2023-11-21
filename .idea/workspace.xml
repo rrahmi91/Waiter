@@ -10,7 +10,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3cb7c4ab-81e7-4cd0-b5ee-3437120d730b" name="Changes" comment="Created packages">
+      <change afterPath="$PROJECT_DIR$/.idea/checkstyle-idea.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/restaurant/menu/Waiter.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/user/Administrator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/user/Administrator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/user/UserAddable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Alcohol.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Changeable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Dessert.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Dish.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Drinks.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/HotDrinks.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Juice.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MainCourse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Menu.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Product.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Salad.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SoftDrinks.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Soup.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Waiter.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Water.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,20 +93,30 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\user\Documents\Digital NorthEast BG\Course 2023\Module 2\Waiter-Rahmi-Saliha\src\com\restaurant\menu" />
+    </key>
+  </component>
   <component name="RunManager">
-    <configuration default="true" type="JetRunConfigurationType">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.restaurant.user.Main" />
       <module name="Waiter" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.restaurant.user.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="Waiter" />
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -135,33 +166,11 @@
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
-    <option name="RECENT_FILTERS">
-      <map>
-        <entry key="User">
-          <value>
-            <list>
-              <RecentGroup>
-                <option name="FILTER_VALUES">
-                  <option value="*" />
-                </option>
-              </RecentGroup>
-            </list>
-          </value>
-        </entry>
-      </map>
-    </option>
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
             <State>
-              <option name="COLUMN_ID_WIDTH">
-                <map>
-                  <entry key="Table.Default.Author.ColumnIdWidth" value="67" />
-                  <entry key="Table.Default.Date.ColumnIdWidth" value="71" />
-                  <entry key="Table.Space.CommitStatus.ColumnIdWidth" value="71" />
-                </map>
-              </option>
               <option name="FILTERS">
                 <map>
                   <entry key="user">
@@ -173,7 +182,29 @@
                   </entry>
                 </map>
               </option>
+              <option name="COLUMN_ID_WIDTH">
+                <map>
+                  <entry key="Table.Default.Author.ColumnIdWidth" value="67" />
+                  <entry key="Table.Default.Date.ColumnIdWidth" value="71" />
+                  <entry key="Table.Space.CommitStatus.ColumnIdWidth" value="71" />
+                </map>
+              </option>
             </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="User">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="*" />
+                </option>
+              </RecentGroup>
+            </list>
           </value>
         </entry>
       </map>

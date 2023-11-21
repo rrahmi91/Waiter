@@ -1,11 +1,13 @@
+package com.restaurant.menu;
+
 public abstract class Dish extends Product {
     protected String name;
     protected String quantityUnit;
 
     public Dish(String name, int quantity, String quantityUnit, double price) {
+        super(quantity, price);
         this.name = name;
         this.quantityUnit = quantityUnit;
-        super(quantity, price);
     }
 
     public String getQuantityUnit() {

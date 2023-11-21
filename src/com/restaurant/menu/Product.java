@@ -1,9 +1,11 @@
+package com.restaurant.menu;
+
 public class Product {
 
     protected int quantity;
     protected double price;
 
-    Product(int quantitydouble, price) {
+    Product(int quantitydouble, double price) {
         this.quantity = quantity;
         this.price = price;
     }
