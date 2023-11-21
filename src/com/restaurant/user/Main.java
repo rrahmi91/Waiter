@@ -7,7 +7,7 @@ public class Main {
         ArrayList<User> personal = new ArrayList<>();
         Administrator administrator = new Administrator("ADMIN", "Admin123*", "Administrator", personal);
         administrator.addUser(Administrator.scanner);
-        personal =administrator.getAllPersonal();
+        personal = administrator.getAllPersonal();
 
         for (int i = 0; i < personal.size(); i++) {
             System.out.println("-".repeat(20));
