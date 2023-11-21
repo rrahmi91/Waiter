@@ -9,6 +9,5 @@ public class Cook extends User {
 
     @Override
     public void changeOrderStatus(String status) {
-
     }
 }
