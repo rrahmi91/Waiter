@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Administrator extends User implements UserManageable {
     public static Scanner scanner = new Scanner(System.in);
     protected ArrayList<User> allPersonal;
-    public Administrator(String userName, String password, String role, ArrayList<User> allPersonal) {
+    public Administrator(String userName, String password, UserType role, ArrayList<User> allPersonal) {
         super(userName, password, role);
         this.allPersonal = allPersonal;
     }
@@ -37,7 +37,7 @@ public class Administrator extends User implements UserManageable {
     private User addWaiter() {
         String userName = createUserName(scanner);
         String password = createPassword(scanner);
-        String role = "Сервитьор";
+        UserType role=UserType.WAITER;
 
         return new Waiter(userName, password, role);
     }

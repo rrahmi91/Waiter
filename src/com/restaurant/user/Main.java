@@ -4,7 +4,7 @@ import java.util.List;
 public class Main {
     public static List<User> createUser(){
         ArrayList<User> personal = new ArrayList<>();
-        Administrator administrator = new Administrator("ADMIN", "Admin123*", "Administrator", personal);
+        Administrator administrator = new Administrator("ADMIN", "Admin123*", UserType.ADMINISTRATOR, personal);
         administrator.addUser(Administrator.scanner);
         personal = administrator.getAllPersonal();
 
