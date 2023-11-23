@@ -1,8 +1,6 @@
 package com.restaurant.user;
 import java.util.ArrayList;
 import java.util.List;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 public class Main {
     public static List<User> createUser(){
         ArrayList<User> personal = new ArrayList<>();
