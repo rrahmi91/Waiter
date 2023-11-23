@@ -1,6 +1,10 @@
 package com.restaurant.user;
 
-public class Waiter extends User implements Addable,Changeable{
+import com.restaurant.order.Order;
+
+import java.util.ArrayList;
+
+public class Waiter extends User implements Addable, Changeable {
     public Waiter(String userName, String password, String role) {
         super(userName, password, role);
     }
@@ -14,10 +18,10 @@ public class Waiter extends User implements Addable,Changeable{
 
     }
 
-    public void createOrder(){
-
+    public void createOrder() {
     }
-    public void finishOrder(){
+
+    public void finishOrder() {
 
     }
 
