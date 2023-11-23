@@ -20,6 +20,7 @@ public class Main {
         return personal;
     }
     public static void main(String[] args) {
+
         System.out.println(createUser().size());
     }
 }
