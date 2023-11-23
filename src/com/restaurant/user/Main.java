@@ -1,7 +1,8 @@
 package com.restaurant.user;
 import java.util.ArrayList;
 import java.util.List;
-
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 public class Main {
     public static List<User> createUser(){
         ArrayList<User> personal = new ArrayList<>();
@@ -19,6 +20,15 @@ public class Main {
         return personal;
     }
     public static void main(String[] args) {
-        System.out.println(createUser().size());
+        LocalDateTime currentDateTime = LocalDateTime.now();
+
+        // Форматиране на датата и часа
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        String formattedDateTime = currentDateTime.format(formatter);
+
+        // Извеждане на резултата
+        System.out.println("Текуща дата и час: " + formattedDateTime);
     }
+        //System.out.println(createUser().size());
+    //}
 }
