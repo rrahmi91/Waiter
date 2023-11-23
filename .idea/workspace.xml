@@ -10,7 +10,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3cb7c4ab-81e7-4cd0-b5ee-3437120d730b" name="Changes" comment="Created packages">
+      <change afterPath="$PROJECT_DIR$/src/com/restaurant/order/Order.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/restaurant/order/OrderStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/restaurant/order/Table.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/restaurant/user/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/restaurant/user/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/restaurant/user/Waiter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/restaurant/user/Waiter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +28,7 @@
         <option value="Interface" />
         <option value="package-info" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -42,7 +48,7 @@
     </excluded-from-favorite>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="work-User-class-and-LoginMenager" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -69,7 +75,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/rahmi/IdeaProjects/m2HomeWork11&quot;,
     &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.editor&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -195,5 +201,20 @@
     <MESSAGE value="Created classAdministrator, which will be responsible for creating and removing users (persona)" />
     <MESSAGE value="Created packages" />
     <option name="LAST_COMMIT_MESSAGE" value="Created packages" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/com/restaurant/user/Administrator.java</url>
+          <line>63</line>
+          <properties class="com.restaurant.user.Administrator" method="createPassword">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
