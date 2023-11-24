@@ -1,10 +1,12 @@
 package com.restaurant.user;
 import java.util.ArrayList;
+import java.util.Optional;
 import java.util.Scanner;
 
 public class Administrator extends User implements UserManageable {
     public static Scanner scanner = new Scanner(System.in);
     protected ArrayList<User> allPersonal;
+
     public Administrator(String userName, String password, UserType role, ArrayList<User> allPersonal) {
         super(userName, password, role);
         this.allPersonal = allPersonal;
@@ -13,41 +15,36 @@ public class Administrator extends User implements UserManageable {
     public ArrayList<User> getAllPersonal() {
         return allPersonal;
     }
-    public void addUser(Scanner scanner) {
-        User newUser;
-        while (true) {
-            System.out.println("Моля изберете вид персонал, който искате да добавите:");
-            System.out.println("1. За сервитьор");
-            System.out.println("2. За готвач");
-            System.out.println("За изход въведете произволен символ или символи.");
 
-            String selection = scanner.nextLine();
+    public void addUser(String selection) {
+        User newUser = null;
 
-            if (selection.equals("1")) {
-                newUser = addWaiter();
-            } else if (selection.equals("2")) {
-                newUser = addCook();
-            } else {
-                System.out.println("Избран изход.");
-                break;
-            }
+        if (selection.equals("1")) {
+            newUser = addWaiter();
+        } else if (selection.equals("2")) {
+            newUser = addCook();
+        }
+        if (newUser != null) {
             this.allPersonal.add(getAllPersonal().size(), newUser);
         }
     }
+
     private User addWaiter() {
         String userName = createUserName(scanner);
         String password = createPassword(scanner);
-        UserType role=UserType.WAITER;
+        UserType role = UserType.WAITER;
 
         return new Waiter(userName, password, role);
     }
+
     private User addCook() {
         String userName = createUserName(scanner);
         String password = createPassword(scanner);
-        String role = "Готвач";
+        UserType role = UserType.COOK;
 
         return new Cook(userName, password, role);
     }
+
     private String createUserName(Scanner scanner) {
         String userName;
         while (true) {
@@ -61,6 +58,7 @@ public class Administrator extends User implements UserManageable {
 
         return userName;
     }
+
     private String createPassword(Scanner scanner) {
         String password;
         do {
@@ -70,10 +68,11 @@ public class Administrator extends User implements UserManageable {
 
         return password;
     }
+
     private boolean verificationUserName(String userName) {
         boolean valid = true;
 
-        if (userName.trim().isEmpty() || userName.length() <4) {
+        if (userName.trim().isEmpty() || userName.length() < 4) {
             valid = false;
         } else {
             for (User user : allPersonal) {
@@ -85,6 +84,7 @@ public class Administrator extends User implements UserManageable {
         }
         return valid;
     }
+
     private boolean verificationPassword(String password) {
         boolean valid = false;
         try {
@@ -104,6 +104,7 @@ public class Administrator extends User implements UserManageable {
         }
         return valid;
     }
+
     private boolean verificationPasswordCharacters(String password) {
         boolean charValid = false;
         boolean uppercaseValid = false;
@@ -122,14 +123,18 @@ public class Administrator extends User implements UserManageable {
 
         return charValid && uppercaseValid && lowercaseValid;
     }
+
     public void removeUser(String userName) {
-        for (int i = 0; i < getAllPersonal().size(); i++) {
-            if (getAllPersonal().get(i).getUserName().equals(userName)) {
-                System.out.println("Потребител "+getAllPersonal().get(i).getUserName()+" е изтрит");
-                getAllPersonal().remove(i);
-            }else{
-                System.out.println("Този потребител не съществува");
-            }
+        Optional<User> userToRemove = getAllPersonal()
+                .stream()
+                .filter(user -> user.getUserName().equals(userName))
+                .findFirst();
+
+        if (userToRemove.isPresent()) {
+            getAllPersonal().remove(userToRemove.get());
+            System.out.println("Потребител " + userName + " е изтрит");
+        } else {
+            System.out.println("Този потребител не съществува");
         }
     }
 }
