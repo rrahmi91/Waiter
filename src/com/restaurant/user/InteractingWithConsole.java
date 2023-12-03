@@ -1,11 +1,14 @@
 package com.restaurant.user;
 
+import com.restaurant.user.UserVerifier.UserVerifier;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class InteractingWithConsole {
     public final ArrayList<User> personal = new ArrayList<>();
     public final Administrator administrator = new Administrator("ADMIN", "Admin123*", UserType.ADMINISTRATOR, personal);
+    private final UserVerifier userVerifier = new UserVerifier();
 
     public void userMenageInterfaceAddUser(Scanner scanner) {
         String selection;
@@ -23,12 +26,14 @@ public class InteractingWithConsole {
             switch (selection) {
                 case "1":
                 case "2":
-                    administrator.addUser(selection);
+                    String NewUserName = readUserNameFromConsole(scanner);
+                    String password = readPasswordFromConsole(scanner);
+                    administrator.addUser(selection, NewUserName, password);
                     break;
                 case "3":
                     System.out.println("Моля въведете потребителско име, който искате да премахнете");
-                    String userName = scanner.nextLine();
-                    administrator.removeUser(userName);
+                    String userNameToDelete = scanner.nextLine();
+                    administrator.removeUser(userNameToDelete);
                     break;
                 case "4":
                     personal.forEach(System.out::println);
@@ -39,7 +44,26 @@ public class InteractingWithConsole {
             }
         }
     }
-    public void mainRestaurantMenu(Scanner scanner){
+
+    private String readUserNameFromConsole(Scanner scanner) {
+        String userNameReaded;
+        do {
+            System.out.println("Моля въведете потребителско име");
+            userNameReaded = scanner.nextLine();
+        } while (userVerifier.createUserName(userNameReaded, personal) == null);
+        return userNameReaded;
+    }
+
+    private String readPasswordFromConsole(Scanner scanner) {
+        String passwordReaded;
+        do {
+            System.out.println("Моля въведете парола");
+            passwordReaded = scanner.nextLine();
+        } while (userVerifier.createPassword(passwordReaded) == null);
+        return passwordReaded;
+    }
+
+    private void mainRestaurantMenu(Scanner scanner) {
 
     }
 }

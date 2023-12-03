@@ -1,11 +1,12 @@
-package com.restaurant.user;
+package com.restaurant;
+import com.restaurant.user.InteractingWithConsole;
+
 import java.util.Scanner;
 
 public class Main {
-
+    protected static final InteractingWithConsole interactingWithConsole = new InteractingWithConsole();
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        InteractingWithConsole interactingWithConsole = new InteractingWithConsole();
         interactingWithConsole.userMenageInterfaceAddUser(scanner);
         scanner.close();
     }
