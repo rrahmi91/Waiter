@@ -1,5 +1,4 @@
 package com.restaurant;
-import com.restaurant.user.InteractingWithConsole;
 
 import java.util.Scanner;
 

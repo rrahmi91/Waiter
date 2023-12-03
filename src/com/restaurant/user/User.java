@@ -4,6 +4,16 @@ public abstract class User{
     private String password;
     private UserType role;
 
+    public boolean isLoggedIn() {
+        return isLoggedIn;
+    }
+
+    public void setLoggedIn(boolean loggedIn) {
+        isLoggedIn = loggedIn;
+    }
+
+    private boolean isLoggedIn;
+
     public User(String userName, String password, UserType role) {
         setUserName(userName);
         setPassword(password);
@@ -39,12 +49,14 @@ public abstract class User{
         this.role = role;
     }
 
+
     @Override
     public String toString() {
         return "User{" +
                 "Потребителско име --> '" + userName + '\'' +
                 ", Парола --> '" + password + '\'' +
-                ", Длъжност --> " + role +
+                ", Длъжност --> " + role +'\'' +
+                ", LOGIN --> " + isLoggedIn +
                 '}';
     }
 }

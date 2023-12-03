@@ -2,7 +2,6 @@ package com.restaurant.user;
 
 import java.util.ArrayList;
 import java.util.Optional;
-import java.util.Scanner;
 
 public class Administrator extends User implements UserManageable {
     protected ArrayList<User> allPersonal;

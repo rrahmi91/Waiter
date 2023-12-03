@@ -1,5 +1,8 @@
-package com.restaurant.user;
+package com.restaurant;
 
+import com.restaurant.user.Administrator;
+import com.restaurant.user.User;
+import com.restaurant.user.UserType;
 import com.restaurant.user.UserVerifier.UserVerifier;
 
 import java.util.ArrayList;
@@ -63,7 +66,28 @@ public class InteractingWithConsole {
         return passwordReaded;
     }
 
-    private void mainRestaurantMenu(Scanner scanner) {
+    public String restaurantMenageMainMenuInterface(Scanner scanner) {
+        System.out.println("+----------------------------------------------------+");
+        System.out.println("|          ГУРМЕ РЕСТОРАНТ\"ЕКПЛОЗИЯ\"               |");
+        System.out.println("|                 1. Вписване   (Login)              |");
+        System.out.println("|                 2. Отписване  (LogOut)             |");
+        System.out.println("|  За изход въведете произволен символ или символи.  |");
+        System.out.println("+----------------------------------------------------+");
+        if(personal.isEmpty()){
+            System.out.println("\u001B[31mСистемата няма регистриран персонал.\u001B[0m\n" +
+                    "\u001B[33mЗа да добавите персонал моля се влезте като администратор и създайте сервитьор и готвач.\u001B[0m");
+        }else {
+            return scanner.nextLine();
+        }
+        return null;
+    }
 
+    public String interfaceForReadOnLoginUsername(Scanner scanner){
+        System.out.println("\t\t\t\"МОЛЯ ВЪВЕДЕТЕ ПОТРЕБИТЕЛСКО ИМЕ\"");
+        return scanner.nextLine();
+    }
+    public String interfaceForReadOnLoginPassword(Scanner scanner){
+        System.out.println("\t\t\t\"МОЛЯ ВЪВЕДЕТЕ ПАРОЛА\"");
+        return scanner.nextLine();
     }
 }

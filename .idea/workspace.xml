@@ -9,19 +9,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3cb7c4ab-81e7-4cd0-b5ee-3437120d730b" name="Changes" comment="Little change.java">
-      <change afterPath="$PROJECT_DIR$/src/com/restaurant/user/UserVerifier/PasswordVerification.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/restaurant/user/UserVerifier/UserNameVerification.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/restaurant/user/UserVerifier/UserVerifier.java" afterDir="false" />
+    <list default="true" id="3cb7c4ab-81e7-4cd0-b5ee-3437120d730b" name="Changes" comment="Edit the admin class and InteractingWithConsole and make small improvements.">
+      <change afterPath="$PROJECT_DIR$/src/com/restaurant/userLogin/LoginMenager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/restaurant/userLogin/Loginable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/user/Administrator$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/user/Administrator$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/user/Administrator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/user/Administrator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/user/InteractingWithConsole.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/user/InteractingWithConsole.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/user/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/user/UserManageable.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/user/UserManageable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/user/InteractingWithConsole.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/user/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/user/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/user/Waiter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/user/Waiter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/restaurant/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/restaurant/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/restaurant/order/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/restaurant/order/Order.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/restaurant/user/Administrator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/restaurant/user/Administrator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/restaurant/user/InteractingWithConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/restaurant/user/InteractingWithConsole.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/restaurant/user/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/restaurant/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/restaurant/user/UserManageable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/restaurant/user/UserManageable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/restaurant/user/InteractingWithConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/restaurant/InteractingWithConsole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/restaurant/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/restaurant/user/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/restaurant/user/Waiter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/restaurant/user/Waiter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,10 +34,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="package-info" />
         <option value="Enum" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -207,7 +210,14 @@
       <option name="project" value="LOCAL" />
       <updated>1701602890148</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Edit the admin class and InteractingWithConsole and make small improvements.">
+      <created>1701615755775</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1701615755775</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -269,7 +279,8 @@
     <MESSAGE value="Work administrator class" />
     <MESSAGE value="Created and write cod InteractingWithConsole.java" />
     <MESSAGE value="Little change.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="Little change.java" />
+    <MESSAGE value="Edit the admin class and InteractingWithConsole and make small improvements." />
+    <option name="LAST_COMMIT_MESSAGE" value="Edit the admin class and InteractingWithConsole and make small improvements." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
