@@ -42,9 +42,9 @@ public abstract class User{
     @Override
     public String toString() {
         return "User{" +
-                "userName='" + userName + '\'' +
-                ", password='" + password + '\'' +
-                ", role=" + role +
+                "Потребителско име --> '" + userName + '\'' +
+                ", Парола --> '" + password + '\'' +
+                ", Длъжност --> " + role +
                 '}';
     }
 }
