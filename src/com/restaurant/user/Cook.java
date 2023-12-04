@@ -1,7 +1,9 @@
 package com.restaurant.user;
 
+import com.restaurant.order.Changeable;
+
 public class Cook extends User implements Changeable {
-    public Cook(String userName, String password, String role) {
+    public Cook(String userName, String password, UserType role) {
         super(userName, password, role);
     }
 
@@ -12,5 +14,10 @@ public class Cook extends User implements Changeable {
     @Override
     public void changeOrderStatus(String status) {
 
+    }
+
+    @Override
+    public String toString() {
+        return super.toString();
     }
 }

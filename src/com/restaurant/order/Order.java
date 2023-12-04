@@ -1,5 +1,9 @@
 package com.restaurant.order;
 
+import com.restaurant.menu.Product;
+
+import java.util.List;
+
 public class Order {
     private String waiterUserName;
     private String createData;
@@ -13,8 +17,17 @@ public class Order {
         this.finishData = finishData;
         this.totalPrice = totalPrice;
         this.status = status;
-    }
-    public Order() {
 
+    }
+
+    @Override
+    public String toString() {
+        return "Поръчка{" +
+                "Създаден от сервитьор='" + waiterUserName + '\'' +
+                ", createData='" + createData + '\'' +
+                ", finishData='" + finishData + '\'' +
+                ", totalPrice=" + totalPrice +
+                ", status=" + status +
+                '}'+"\n";
     }
 }

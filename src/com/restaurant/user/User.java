@@ -2,17 +2,29 @@ package com.restaurant.user;
 public abstract class User{
     protected String userName;
     private String password;
-    private String role;
+    private UserType role;
+    private boolean isLoggedIn;
 
-    public User(String userName, String password, String role) {
-        this.userName = userName;
-        this.password = password;
-        this.role = role;
+    public boolean isLoggedIn() {
+        return isLoggedIn;
+    }
+
+    public void setLoggedIn(boolean loggedIn) {
+        isLoggedIn = loggedIn;
+    }
+
+
+
+    public User(String userName, String password, UserType role) {
+        setUserName(userName);
+        setPassword(password);
+        setRole(role);
+
     }
     public User() {
         this.userName = "Not entered";
         this.password = "Not entered";
-        this.role = "Not entered";
+        this.role = UserType.ADMINISTRATOR;
     }
 
     public String getUserName() {
@@ -31,12 +43,23 @@ public abstract class User{
         this.password = password;
     }
 
-    public String getRole() {
+    public UserType getRole() {
         return role;
     }
 
-    public void setRole(String role) {
+    public void setRole(UserType role) {
         this.role = role;
     }
 
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "Потребителско име --> '" + userName + '\'' +
+                ", Парола --> '" + password + '\'' +
+                ", Длъжност --> " + role +'\'' +
+                ", LOGIN --> " + isLoggedIn +
+                '}';
+    }
 }
+

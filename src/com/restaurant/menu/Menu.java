@@ -1,6 +1,6 @@
 package com.restaurant.menu;
 
-import com.restaurant.user.Addable;
+import com.restaurant.order.Addable;
 import java.util.List;
 
 public class Menu implements Addable {
