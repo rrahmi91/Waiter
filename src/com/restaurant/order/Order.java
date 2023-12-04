@@ -14,7 +14,7 @@ public class Order {
         this.totalPrice = totalPrice;
         this.status = status;
     }
-    public Order() {
+    public  Order() {
 
     }
 }

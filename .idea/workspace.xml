@@ -9,8 +9,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3cb7c4ab-81e7-4cd0-b5ee-3437120d730b" name="Changes" comment="test">
-      <change beforePath="$PROJECT_DIR$/src/com/restaurant/user/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/restaurant/user/Main.java" afterDir="false" />
+    <list default="true" id="3cb7c4ab-81e7-4cd0-b5ee-3437120d730b" name="Changes" comment="&#10;I created a loginМanager class. Who isn't ready yet.I added some interface methods to the Interaction Console class">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/InteractingWithConsole.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/InteractingWithConsole.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/user/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/user/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/user/Waiter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/user/Waiter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/userLogin/LoginMenager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/userLogin/LoginMenager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/userLogin/Loginable.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/userLogin/Loginable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/restaurant/InteractingWithConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/restaurant/InteractingWithConsole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/restaurant/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/restaurant/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/restaurant/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/restaurant/user/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/restaurant/user/UserVerifier/UserVerifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/restaurant/user/UserVerifier/UserVerifier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/restaurant/userLogin/LoginMenager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/restaurant/userLogin/LoginMenager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/restaurant/userLogin/Loginable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/restaurant/userLogin/Loginable.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,10 +32,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="package-info" />
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -48,6 +60,7 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="SWAP_SIDES_IN_COMPARE_BRANCHES" value="true" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -63,28 +76,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/rahmi/IdeaProjects/m2HomeWork11&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.editor&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "C:/Users/rahmi/IdeaProjects/m2HomeWork11",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\user\Documents\Digital NorthEast BG\Course 2023\Module 2\Waiter-Rahmi-Saliha\src\com\restaurant\menu" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.restaurant.user.Main" />
+      <option name="MAIN_CLASS_NAME" value="com.restaurant.Main" />
       <module name="Waiter" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.restaurant.user.*" />
+          <option name="PATTERN" value="com.restaurant.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -92,10 +112,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="AdministratorTest.testRemoveUserWhenUserExistsThenUserIsRemoved" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Waiter" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.restaurant.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.restaurant.user" />
+      <option name="MAIN_CLASS_NAME" value="com.restaurant.user.AdministratorTest" />
+      <option name="METHOD_NAME" value="testRemoveUserWhenUserExistsThenUserIsRemoved" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
-        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.AdministratorTest.testRemoveUserWhenUserExistsThenUserIsRemoved" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -144,14 +180,49 @@
       <option name="project" value="LOCAL" />
       <updated>1700582818407</updated>
     </task>
-    <task id="LOCAL-00006" summary="test">
-      <created>1700766498479</created>
+    <task id="LOCAL-00006" summary="Work administrator class">
+      <created>1700771365086</created>
       <option name="number" value="00006" />
       <option name="presentableId" value="LOCAL-00006" />
       <option name="project" value="LOCAL" />
-      <updated>1700766498479</updated>
+      <updated>1700771365086</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Created and write cod InteractingWithConsole.java">
+      <created>1700849807859</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1700849807859</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Created and write cod InteractingWithConsole.java">
+      <created>1700849923540</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1700849923540</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Little change.java">
+      <created>1701602890148</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1701602890148</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Edit the admin class and InteractingWithConsole and make small improvements.">
+      <created>1701615755775</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1701615755775</updated>
+    </task>
+    <task id="LOCAL-00011" summary="&#10;I created a loginМanager class. Who isn't ready yet.I added some interface methods to the Interaction Console class">
+      <created>1701622981383</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1701622981383</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -184,6 +255,13 @@
               </option>
               <option name="FILTERS">
                 <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="administrator-class-separation-of-functionalities" />
+                      </list>
+                    </value>
+                  </entry>
                   <entry key="user">
                     <value>
                       <list>
@@ -203,22 +281,32 @@
     <MESSAGE value="write code LoginManager.java" />
     <MESSAGE value="Created classAdministrator, which will be responsible for creating and removing users (persona)" />
     <MESSAGE value="Created packages" />
-    <MESSAGE value="test" />
-    <option name="LAST_COMMIT_MESSAGE" value="test" />
+    <MESSAGE value="Work administrator class" />
+    <MESSAGE value="Created and write cod InteractingWithConsole.java" />
+    <MESSAGE value="Little change.java" />
+    <MESSAGE value="Edit the admin class and InteractingWithConsole and make small improvements." />
+    <MESSAGE value="&#10;I created a loginМanager class. Who isn't ready yet.I added some interface methods to the Interaction Console class" />
+    <option name="LAST_COMMIT_MESSAGE" value="&#10;I created a loginМanager class. Who isn't ready yet.I added some interface methods to the Interaction Console class" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/restaurant/user/UserVerifier/PasswordVerification.java</url>
+          <line>4</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/restaurant/user/Administrator.java</url>
-          <line>63</line>
-          <properties class="com.restaurant.user.Administrator" method="createPassword">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="1" />
+          <line>25</line>
+          <option name="timeStamp" value="19" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Waiter$Main.ic" NAME="Main Coverage Results" MODIFIED="1700899799195" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.restaurant.user.*</FILTER>
+    </SUITE>
   </component>
 </project>
