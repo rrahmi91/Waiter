@@ -3,7 +3,7 @@ package com.restaurant.user.UserVerifier;
 import com.restaurant.user.User;
 
 import java.util.List;
-import java.util.Scanner;
+
 
 public class UserVerifier  {
     protected final PasswordVerification passwordVerification = new PasswordVerification();

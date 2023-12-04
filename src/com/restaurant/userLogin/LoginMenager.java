@@ -1,34 +1,20 @@
 package com.restaurant.userLogin;
 
 import com.restaurant.user.User;
+import com.restaurant.user.UserType;
 
 import java.util.List;
+import java.util.Optional;
 
-public class LoginMenager implements Loginable{
-    protected String userName;
-    protected String password;
+public class LoginMenager implements Loginable {
     protected List<User> allPersonal;
+    private String userNameAdministrator;
+    private String passwordAdministrator;
 
-    public LoginMenager(String userName, String password, List<User> allPersonal) {
-        this.userName = userName;
-        this.password = password;
-        this.allPersonal = allPersonal;
-    }
-
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
+    public LoginMenager(List<User> allPersonal, String userNameAdministrator, String passwordAdministrator) {
+        setAllPersonal(allPersonal);
+        setUserUserNameAdministrator(userNameAdministrator);
+        setPasswordAdministrator(passwordAdministrator);
     }
 
     public List<User> getAllPersonal() {
@@ -39,26 +25,59 @@ public class LoginMenager implements Loginable{
         this.allPersonal = allPersonal;
     }
 
-    @Override
-    public void login(String userName, String password) {
-        boolean found = false;
-        for (int i = 0; i < getAllPersonal().size(); i++) {
-            if(getAllPersonal().get(i).getUserName().equals(userName) && getAllPersonal().get(i).getPassword().equals(password)){
-                getAllPersonal().get(i).setLoggedIn(true);
-                found = true;
-                System.out.println("Успешен вход за потребител: " + getAllPersonal().get(i).getUserName());
-                break;
-            }
-        }
-        if (!found) {
-            System.out.println("Грешно потребителско име или парола");
-        }
+    public String getUserNameAdministrator() {
+        return userNameAdministrator;
+    }
 
+    public void setUserUserNameAdministrator(String userUserNameAdministrator) {
+        this.userNameAdministrator = userUserNameAdministrator;
+    }
+
+    public String getPasswordAdministrator() {
+        return passwordAdministrator;
+    }
+
+    public void setPasswordAdministrator(String passwordAdministrator) {
+        this.passwordAdministrator = passwordAdministrator;
     }
 
     @Override
-    public void logOut(String userName, String password) {
+    public UserType login(String userNameFromConsole, String passwordFromConsole) {
+        UserType userType = null;
+        if (getUserNameAdministrator().equals(userNameFromConsole) && getPasswordAdministrator().equals(passwordFromConsole)) {
+            userType = UserType.ADMINISTRATOR;
+            System.out.println("Успешен вход като администратор: ");
 
+        } else {
+            for (int i = 0; i < getAllPersonal().size(); i++) {
+                if (getAllPersonal().get(i).getUserName().equals(userNameFromConsole) && getAllPersonal().get(i).getPassword().equals(passwordFromConsole)) {
+                    getAllPersonal().get(i).setLoggedIn(true);
+                    userType = getAllPersonal().get(i).getRole();
+                    System.out.println("Успешен вход за потребител: " + getAllPersonal().get(i).getUserName());
+                    break;
+                }
+            }
+        }
+        if (userType == null) {
+            System.out.println("\u001B[31m Грешно потребителско име или парола\u001B[0m\n");
+        }
+        return userType;
+    }
+
+    @Override
+    public void logOut(String userName) {
+        Optional<User> userLogOut = getAllPersonal()
+                .stream()
+                .filter(user -> user.getUserName().equals(userName))
+                .findFirst();
+
+        if (userLogOut.isPresent()) {
+            User userToLogOut = userLogOut.get();
+            userToLogOut.setLoggedIn(false);
+            System.out.println("Потребител " + userName + " е отписан");
+        } else {
+            System.out.println("Този потребител не съществува");
+        }
     }
 
 }

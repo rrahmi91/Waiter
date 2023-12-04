@@ -3,6 +3,7 @@ public abstract class User{
     protected String userName;
     private String password;
     private UserType role;
+    private boolean isLoggedIn;
 
     public boolean isLoggedIn() {
         return isLoggedIn;
@@ -12,12 +13,13 @@ public abstract class User{
         isLoggedIn = loggedIn;
     }
 
-    private boolean isLoggedIn;
+
 
     public User(String userName, String password, UserType role) {
         setUserName(userName);
         setPassword(password);
         setRole(role);
+
     }
     public User() {
         this.userName = "Not entered";

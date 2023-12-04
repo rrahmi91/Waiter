@@ -1,9 +1,10 @@
 package com.restaurant.userLogin;
 
+import com.restaurant.user.UserType;
+
 public interface Loginable {
 
-    void login(String userName, String password);
+    public UserType login(String userName, String password);
 
-    public void logOut(String userName, String password);
-
+    public void logOut(String userName);
 }

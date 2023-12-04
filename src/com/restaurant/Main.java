@@ -6,7 +6,7 @@ public class Main {
     protected static final InteractingWithConsole interactingWithConsole = new InteractingWithConsole();
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        interactingWithConsole.userMenageInterfaceAddUser(scanner);
+        interactingWithConsole.restaurantMenageMainMenuInterface(scanner);
         scanner.close();
     }
 }
