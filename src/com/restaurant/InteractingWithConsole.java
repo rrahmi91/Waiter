@@ -1,29 +1,29 @@
 package com.restaurant;
 
+import com.restaurant.FileHandler.FileHandler;
+import com.restaurant.menu.Product;
 import com.restaurant.order.Changeable;
 import com.restaurant.order.Order;
+
+import com.restaurant.order.TableStatus;
 import com.restaurant.user.*;
 import com.restaurant.user.UserVerifier.UserVerifier;
 import com.restaurant.userLogin.LoginMenager;
 import com.restaurant.userLogin.Loginable;
 
-
+import java.io.File;
 import java.util.ArrayList;
-
 import java.util.Scanner;
 
 
 public class InteractingWithConsole {
     public final ArrayList<User> personal = new ArrayList<>();
-
-    //public final ArrayList<Order> order =new ArrayList<>();
     private final Restaurant restaurant = new Restaurant();
     public final Administrator administrator = new Administrator("Admin", "Admin123*", UserType.ADMINISTRATOR, personal);
     private final UserVerifier userVerifier = new UserVerifier();
     private final Loginable loginable = new LoginMenager(personal, administrator.getUserName(), administrator.getPassword());
     private final Changeable changeableWaiter = new Waiter();
     private final Changeable changeableCook = new Cook();
-
     private static User loginedUser = null;
 
     public void restaurantMenageMainMenuInterface(Scanner scanner) {
@@ -56,7 +56,7 @@ public class InteractingWithConsole {
         }
     }
 
-    public void userMenageInterfaceAddUser(Scanner scanner) {
+    private void userMenageInterfaceAddUser(Scanner scanner) {
         String selection;
         label:
         while (true) {
@@ -86,6 +86,8 @@ public class InteractingWithConsole {
                     break;
                 default:
                     System.out.println("Избран изход");
+                    FileHandler userdata = new FileHandler(personal);
+                    userdata.writeToFile();
                     administrator.setLoggedIn(false);
                     restaurantMenageMainMenuInterface(scanner);
                     loginedUser = null;
@@ -112,7 +114,7 @@ public class InteractingWithConsole {
         return passwordReaded;
     }
 
-    public void interfaceForReadOnLogin(Scanner scanner) {
+    private void interfaceForReadOnLogin(Scanner scanner) {
         String userName = interfaceForReadOnLoginUsername(scanner);
         String password = interfaceForReadOnLoginPassword(scanner);
         loginedUser = loginable.login(userName, password);
@@ -122,17 +124,17 @@ public class InteractingWithConsole {
                 administrator.setLoggedIn(true);
                 userMenageInterfaceAddUser(scanner);
             } else if (loginedUser.getRole().equals(UserType.WAITER)) {
-                interfaceWaiter(scanner, userName);
+                interfaceWaiter(scanner, loginedUser.getUserName());
             } else if (loginedUser.getRole().equals(UserType.COOK)) {
-                interfaceCook(scanner, userName);
+                interfaceCook(scanner, loginedUser.getUserName());
             }
         } else {
-            interfaceForReadOnLogin(scanner);// TODO: 4.12.2023 г. да се връща пак в начало;
+            interfaceForReadOnLogin(scanner);;
         }
     }
 
     //***********************************************************************************
-    public void interfaceAddProductToOrder(Scanner scanner) {
+    private void interfaceAddProductToOrder(Scanner scanner) {
         System.out.println("+----------------------------------------------------------------+");
         System.out.println("|               ИЗБЕРЕТЕ ЕДИН ОТ СЛЕДНИТЕ ОПЦИИ                   |");
         System.out.println("|           1. Ястия                                             |");
@@ -149,7 +151,7 @@ public class InteractingWithConsole {
         }
     }
 
-    public void interfaceAddDish(Scanner scanner) {
+    private void interfaceAddDish(Scanner scanner) {
         System.out.println("+----------------------------------------------------------------+");
         System.out.println("|               ИЗБЕРЕТЕ ЕДИН ОТ СЛЕДНИТЕ ОПЦИИ                   |");
         System.out.println("|           1. Осноно меню                                       |");
@@ -176,7 +178,7 @@ public class InteractingWithConsole {
         }
     }
 
-    public void interfaceAddDrinks(Scanner scanner) {
+    private void interfaceAddDrinks(Scanner scanner) {
         System.out.println("+----------------------------------------------------------------+");
         System.out.println("|               ИЗБЕРЕТЕ ЕДИН ОТ СЛЕДНИТЕ ОПЦИИ                   |");
         System.out.println("|           1. Алкохолни                                         |");
@@ -221,7 +223,7 @@ public class InteractingWithConsole {
         label:
         while (true) {
             System.out.println("+-------------------------------------------------------------------------------+");
-            System.out.println("|                  ГУРМЕ РЕСТОРАНТ\"ЕКСПЛОЗИЯ\"                                  |");
+            System.out.println("|                  ГУРМЕ РЕСТОРАНТ\"ЕКСПЛОЗИЯ\"                                   |");
             System.out.println("|                   1. Създаване на поръчка                                     |");
             System.out.println("|                   2. Преглед на поръчки                                       |");
             System.out.println("|                   3. Редактиране на поръчка                                   |");
@@ -238,10 +240,10 @@ public class InteractingWithConsole {
                     interfaceCreateOrder(scanner, newOrder);
                     break;
                 case "2":
-                    System.out.println(restaurant.getTables());
+                    printActivOrder();
                     break;
                 case "3":
-                    editOrderStatusInterface(scanner);
+                    interfaceWaiterEditOrder(scanner);
                     break;
                 case "4":
                     // TODO: 4.12.2023 г. Тука ще идва метода преглед на меню
@@ -259,20 +261,28 @@ public class InteractingWithConsole {
         }
     }
 
-    public void interfaceCreateOrder(Scanner scanner, Order order) {
-        System.out.println("Моля въведете номер на маса");
-        int readTableNumber = scanner.nextInt(); // TODO: 6.12.2023 г. Tyka реши проблема Exception
-        scanner.nextLine();
-        restaurant.assignOrderToTable(order, readTableNumber);
-    }
+    private void interfaceWaiterEditOrder(Scanner scanner) {
+        System.out.println("+------------------------------------------------------------------+");
+        System.out.println("|                  ГУРМЕ РЕСТОРАНТ\"ЕКСПЛОЗИЯ\"                      |");
+        System.out.println("|                   1. Добавяне на продтукт                        |");
+        System.out.println("|                   2. Премахване на продукт                       |");
+        System.out.println("|                   3. Смяна на статуса на поръчка                 |");
+        System.out.println("|        За стъпка НАЗАД въведете произволен символ или символи.   |");
+        System.out.println("+------------------------------------------------------------------+");
+        System.out.println("\nВъведете вашия избор: ");
+        String selection = scanner.nextLine();
+        switch (selection) {
+            case "1":
+                break;
+            case "2":
 
-    private int findUserIndex(String userName) {
-        for (int i = 0; i < personal.size(); i++) {
-            if (personal.get(i).getUserName().equals(userName)) {
-                return i;
-            }
+                break;
+            case "3":
+                editOrderStatusInterface(scanner);
+            default:
+                System.out.println("Избран стъпка назад");
+                interfaceWaiter(scanner, loginedUser.getUserName());
         }
-        return 0;
     }
 
     private void interfaceCook(Scanner scanner, String activUserName) {
@@ -289,7 +299,7 @@ public class InteractingWithConsole {
             selection = scanner.nextLine();
             switch (selection) {
                 case "1":
-                    System.out.println(restaurant.getTables());// TODO: 8.12.2023 г. може да се измисли вариант само да се изведе актовните поръчки
+                    printActivOrder();
                     break;
                 case "2":
                     editOrderStatusInterface(scanner);
@@ -304,34 +314,57 @@ public class InteractingWithConsole {
         }
     }
 
-    // TODO: 8.12.2023 г. Не довършено
+    private void interfaceCreateOrder(Scanner scanner, Order order) {
+        int readTableNumber = readTableNumberFromUser(scanner);
+        restaurant.assignOrderToTable(order, readTableNumber);
+        interfaceWaiter(scanner, loginedUser.getUserName());
+    }
+
+    private int findUserIndex(String userName) {
+        for (int i = 0; i < personal.size(); i++) {
+            if (personal.get(i).getUserName().equals(userName)) {
+                return i;
+            }
+        }
+        return 0;
+    }
+
+    private void printActivOrder() {
+        restaurant.getTables().stream()
+                .filter(table -> table.getTableStatus() != TableStatus.FREE)
+                .forEach(System.out::println);
+        if (restaurant.getTables().stream().noneMatch(table -> table.getTableStatus() != TableStatus.FREE)) {
+            System.out.println("Няма активни поръчки.");
+        }
+    }
+
     private void editOrderStatusInterface(Scanner scanner) {
+        int selectedTableNumber = readTableNumberFromUser(scanner);
+
+        if (selectedTableNumber >= 0 && selectedTableNumber <= restaurant.getTables().size()) {
+            if (restaurant.getTables().get(selectedTableNumber).getTableStatus() != null) {
+                System.out.println(restaurant.getTables().get(selectedTableNumber));
+                updateOrderStatusForTable(scanner, selectedTableNumber);
+            } else {
+                System.out.println("В тази маса няма създадена поръчка и не може да се редактира");
+            }
+        } else {
+            System.out.println("Не съшествуваща маса");
+        }
+    }
+
+    private int readTableNumberFromUser(Scanner scanner) {
         System.out.println("Моля въведете номер на маса");
         String tableNumberReadFromUser = scanner.nextLine();
-        int selectedTableNumber = validateInputFromUser(tableNumberReadFromUser);
-
-            if (selectedTableNumber >= 0 && selectedTableNumber <= restaurant.getTables().size()) {
-                if (restaurant.getTables().get(selectedTableNumber).getTableStatus() != null) {
-                    System.out.println(restaurant.getTables().get(selectedTableNumber));
-                    updateOrderStatusForTable(scanner,selectedTableNumber);
-                } else {
-                    System.out.println("В тази маса няма създадена поръчка и не може да се редактира");
-                }
-
-            } else {
-                System.out.println("Не съшествуваща маса");
-            }
-
+        return validateInputFromUser(tableNumberReadFromUser);
     }
 
     private int validateInputFromUser(String input) {
         try {
             int integerInput = Integer.parseInt(input);
-            integerInput = integerInput-1;
-            if (integerInput >=0 && integerInput < restaurant.getTables().size()) {
-                if (restaurant.getTables().get(integerInput).getTableStatus() != null) {
-                    return integerInput;
-
+            if (integerInput >= 0 && integerInput <= restaurant.getTables().size()) {
+                if (restaurant.getTables().get(integerInput - 1).getTableStatus() != null) {
+                    return restaurant.getTables().get(integerInput - 1).getTableNumber();
                 } else {
                     System.out.println("В тази маса няма създадена поръчка и не може да се редактира");
                     return -1;
@@ -339,41 +372,44 @@ public class InteractingWithConsole {
             }
         } catch (NumberFormatException e) {
             System.out.println("Невалиден вход за избор. Възникна грешка: " + e.getMessage());
+        } catch (IndexOutOfBoundsException e) {
+            System.out.println("Индексът е извън границите на списъка. Възникна грешка: " + e.getMessage());
         }
         return -1;
     }
 
-    private void updateOrderStatusForTable(Scanner scanner,int tableNumber) {
+    private void updateOrderStatusForTable(Scanner scanner, int tableNumber) {
 
         System.out.println("Моля изберете един от следните опции");
 
         if (loginedUser.getRole().equals(UserType.COOK)) {
-            System.out.println("1. Сготвено");
-            System.out.println("2. Готви се");
+            System.out.println("\u001B[32m1. Сготвено");
+            System.out.println("2. Готви се\u001B[0m");
         } else if (loginedUser.getRole().equals(UserType.WAITER)) {
-            System.out.println("1. Сервиран");
-            System.out.println("2. Платен");
+            System.out.println("\u001B[32m1. Сервиран");
+            System.out.println("2. Платен\u001B[0m");
         }
         String readSelection = scanner.nextLine();
         try {
-            int selectedStatus =  Integer.parseInt(readSelection);
+            int selectedStatus = Integer.parseInt(readSelection);
             Order order = restaurant.getTables().get(tableNumber).getOrder();
-            order = changeOrderStatusBasedOnRole(loginedUser.getRole(),order,selectedStatus);
+            order = changeOrderStatusBasedOnRole(loginedUser.getRole(), order, selectedStatus);
             restaurant.getTables().get(tableNumber).setOrder(order);
         } catch (NumberFormatException e) {
             System.out.println("Невалиден вход за избор. Възникна грешка: " + e.getMessage());
         }
 
     }
-    private Order changeOrderStatusBasedOnRole(UserType role,Order order,int selectedStatus){
 
-        if(role.equals(UserType.WAITER)) {
+    private Order changeOrderStatusBasedOnRole(UserType role, Order order, int selectedStatus) {
+
+        if (role.equals(UserType.WAITER)) {
             return changeableWaiter.changeOrderStatus(order, selectedStatus);
-        }else if(role.equals(UserType.COOK)){
-            return changeableCook.changeOrderStatus(order,selectedStatus);
-        }else {
+        } else if (role.equals(UserType.COOK)) {
+            return changeableCook.changeOrderStatus(order, selectedStatus);
+        } else {
             return order;
         }
     }
-    // TODO: 8.12.2023 г. До тук
+
 }

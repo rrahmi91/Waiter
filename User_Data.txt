@@ -1,0 +1,2 @@
+userName:Rahmi,password:Rahmi123*,role:WAITER
+userName:Saliha,password:Saliha123*,role:COOK
