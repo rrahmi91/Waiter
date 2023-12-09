@@ -1,15 +1,16 @@
 package com.restaurant.FileHandler;
 
 import com.restaurant.order.Table;
+import com.restaurant.user.Cook;
 import com.restaurant.user.User;
-import org.w3c.dom.ls.LSOutput;
+import com.restaurant.user.UserType;
+import com.restaurant.user.Waiter;
 
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FileHandler implements FileReadable,FileWritable{
+public class FileHandler implements FileReadable, FileWritable {
     private static final String USER_FILE_PATH = "User_Data.txt";
     private static final String ORDER_FILE_PATH = "Order_Data.txt";
     public ArrayList<User> personal;
@@ -18,6 +19,7 @@ public class FileHandler implements FileReadable,FileWritable{
     public FileHandler(ArrayList<User> personal) {
         this.personal = personal;
     }
+
     public FileHandler(List<Table> tables) {
         this.tables = tables;
     }
@@ -32,10 +34,23 @@ public class FileHandler implements FileReadable,FileWritable{
 
     @Override
     public String readFile() {
-
-
-        return null;
+        String line = "";
+        StringBuilder resultText = new StringBuilder();
+        try {
+            File file = new File(USER_FILE_PATH);
+            if (file.exists()) {
+                BufferedReader reader = new BufferedReader(new FileReader(file));
+                while ((line = reader.readLine()) != null) {
+                    resultText.append(line).append("\n");
+                }
+                reader.close();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return resultText.toString();
     }
+
 
     @Override
     public void writeToFile() {
@@ -48,7 +63,7 @@ public class FileHandler implements FileReadable,FileWritable{
         } catch (IOException e) {
             e.printStackTrace();
             System.out.println("Грешка при създаване на файла: " + e.getMessage());
-        }finally {
+        } finally {
             try {
                 if (writer != null) {
                     writer.close();
@@ -60,9 +75,10 @@ public class FileHandler implements FileReadable,FileWritable{
             }
         }
     }
-    private String convertUserDataToString(){
+
+    private String convertUserDataToString() {
         StringBuilder dataToArchive = new StringBuilder();
-        for (int i = 0; i <personal.size(); i++) {
+        for (int i = 0; i < personal.size(); i++) {
             String userName = personal.get(i).getUserName();
             String password = personal.get(i).getPassword();
             String role = String.valueOf(personal.get(i).getRole());
@@ -72,5 +88,73 @@ public class FileHandler implements FileReadable,FileWritable{
                     .append("\n");
         }
         return dataToArchive.toString();
+    }
+
+    public void updatePersonalDataFromFile() {
+        String userDataFromFile = readFile();
+        List<User> userListFromFile = convertStringToUsers(userDataFromFile);
+
+        List<User> anotherUserList = new ArrayList<>(userListFromFile);
+        personal.clear();
+        personal.addAll(anotherUserList);
+    }
+
+    private static List<User> convertStringToUsers(String data) {
+        List<User> userList = new ArrayList<>();
+        String[] userStrings = data.split("\n");
+
+        for (String userString : userStrings) {
+            User user = convertStringToUser(userString);
+            if (user != null) {
+                userList.add(user);
+            }
+        }
+
+        return userList;
+    }
+
+    private static User convertStringToUser(String userString) {
+        String[] userAttributes = userString.split(",");
+
+        String userName = null;
+        String password = null;
+        String role = null;
+
+        for (String attribute : userAttributes) {
+            String[] parts = attribute.split(":");
+            if (parts.length == 2) {
+                String key = parts[0];
+                String value = parts[1];
+
+                switch (key) {
+                    case "userName":
+                        userName = value;
+                        break;
+                    case "password":
+                        password = value;
+                        break;
+                    case "role":
+                        role = value;
+                        break;
+                }
+            }
+        }
+
+        if (userName != null && password != null && role != null) {
+            return createUser(userName, password, UserType.valueOf(role));
+        }
+
+        return null;
+    }
+
+    private static User createUser(String userName, String password, UserType role) {
+        switch (role) {
+            case COOK:
+                return new Cook(userName, password, role);
+            case WAITER:
+                return new Waiter(userName, password, role);
+            default:
+                throw new IllegalArgumentException("Неподдържана роля: " + role);
+        }
     }
 }
