@@ -25,4 +25,12 @@ public abstract class Drinks extends Product {
     public void setQuantityUnit(String quantityUnit) {
         this.quantityUnit = quantityUnit;
     }
+
+    @Override
+    public String toString() {
+        return "\nПитие{" +
+                "Марка='" + brand + '\'' +
+                ",количество в ='" + quantityUnit + '\'' +
+                "} " + super.toString();
+    }
 }

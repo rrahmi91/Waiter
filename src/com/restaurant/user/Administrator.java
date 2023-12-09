@@ -10,6 +10,9 @@ public class Administrator extends User implements UserManageable {
         super(userName, password, role);
         this.allPersonal = allPersonal;
     }
+    public Administrator(String userName, String password, UserType role) {
+        super(userName, password, role);
+    }
 
     public ArrayList<User> getAllPersonal() {
         return allPersonal;

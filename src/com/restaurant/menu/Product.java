@@ -5,7 +5,7 @@ public class Product {
     protected int quantity;
     protected double price;
 
-    Product(int quantitydouble, double price) {
+    Product(int quantity, double price) {
         this.quantity = quantity;
         this.price = price;
     }
@@ -24,5 +24,12 @@ public class Product {
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    @Override
+    public String toString() {
+        return  "количество =" + quantity +
+                ", цена =" + price +
+                '}';
     }
 }

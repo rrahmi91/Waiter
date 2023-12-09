@@ -8,8 +8,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Restaurant {
-
     private final List<Table> tables;
+
+    public List<Table> getTables() {
+        return tables;
+    }
 
     public Restaurant() {
         this.tables = new ArrayList<>();
@@ -19,7 +22,7 @@ public class Restaurant {
     private void initializeTables() {
         int numberOfTables = 10;
         for (int i = 0; i < numberOfTables; i++) {
-            tables.add(new Table(TableStatus.FREE));
+            tables.add(new Table(TableStatus.FREE, null));
         }
     }
 
@@ -27,15 +30,16 @@ public class Restaurant {
         Table table = findTableByNumber(tableNumber);
         if (table != null) {
             if (table.getTableStatus().equals(TableStatus.FREE)) {
-                table.assignOrder(order);
+                table.setOrder(order);
                 table.setTableStatus(TableStatus.OCCUPIED);
+                System.out.println("Създадена поръчка към маса " + table.getTableNumber());
+                System.out.println(table.getOrder());
             } else {
                 System.out.println("Маса номер " + table.getTableNumber() + " е заета.");
             }
         } else {
             System.out.println("Не съществуваща маса");
         }
-        System.out.println(tables);
     }
 
     private Table findTableByNumber(int tableNumber) {
@@ -43,5 +47,12 @@ public class Restaurant {
                 .filter(table -> table.getTableNumber() == tableNumber)
                 .findFirst()
                 .orElse(null);
+    }
+
+    @Override
+    public String toString() {
+        return "Restaurant{" +
+                "Маса=" + tables +
+                '}';
     }
 }

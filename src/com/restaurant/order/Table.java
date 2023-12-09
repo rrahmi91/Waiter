@@ -1,21 +1,24 @@
 package com.restaurant.order;
-import java.util.ArrayList;
-import java.util.List;
-
 public class Table {
     private static int nextTableNumber = 1;
-    private int tableNumber;
+    private final int tableNumber;
     private TableStatus tableStatus;
-    private List<Order> orders;
+    private Order order;
 
-    public Table(TableStatus status) {
+    public Table(TableStatus status,Order order) {
         this.tableNumber = nextTableNumber++;
-        this.tableStatus = status;
-        this.orders = new ArrayList<>();
+        setTableStatus(status);
+        setOrder(order);
     }
-    public List<Order> getOrders() {
-        return orders;
+
+    public Order getOrder() {
+        return order;
     }
+
+    public void setOrder(Order order) {
+        this.order = order;
+    }
+
     public  int getTableNumber() {
         return tableNumber;
     }
@@ -27,16 +30,11 @@ public class Table {
         this.tableStatus = tableStatus;
     }
 
-    public void assignOrder(Order order) {
-        orders.add(order);
-        System.out.println("Създадена поръчка към маса " + tableNumber);
-    }
-
     @Override
     public String toString() {
-        return "Маса Номер: " + getTableNumber() +'\'' +
-                " Статус на масата -->" + tableStatus +
-                ", Поръчка към масата -->" + orders +
+        return "\n\u001B[36mМаса Номер: " + getTableNumber() +'\'' +"\u001B[0m"+
+                "\nСтатус на масата -->" + tableStatus +
+                ",\nПоръчка към масата -->" + order +
                 '}';
     }
 }
