@@ -1,6 +1,11 @@
-package com.restaurant.user;
+package com.restaurant.order;
+
+import com.restaurant.menu.Product;
+import com.restaurant.order.Order;
+
 public interface Addable {
-    void addProduct();
-    void removeProduct();
+    Order addProduct(Order order, Product product);
+
+    Order removeProduct(Order order,Product product);
 
 }
