@@ -9,25 +9,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3cb7c4ab-81e7-4cd0-b5ee-3437120d730b" name="Changes" comment="Added logic to add order and edit status, but not finished.">
-      <change afterPath="$PROJECT_DIR$/src/com/restaurant/FileHandler/FileHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/restaurant/FileHandler/FileReadable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/restaurant/FileHandler/FileWritable.java" afterDir="false" />
+    <list default="true" id="3cb7c4ab-81e7-4cd0-b5ee-3437120d730b" name="Changes" comment="Work write to file, but not finished.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/InteractingWithConsole.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/InteractingWithConsole.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/Restaurant.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/Restaurant.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/menu/Alcohol.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/menu/Alcohol.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/menu/Dish.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/menu/Dish.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/menu/Drinks.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/menu/Drinks.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/menu/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/menu/Product.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/menu/Salad.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/menu/Salad.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/user/Administrator$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/user/Administrator$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/user/Administrator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/user/Administrator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/user/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/user/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/userLogin/LoginMenager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/userLogin/LoginMenager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/userLogin/Loginable.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/userLogin/Loginable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/User_Data.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/FileHandler/FileHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/FileHandler/FileHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/restaurant/FileHandler/FileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/restaurant/FileHandler/FileHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/restaurant/InteractingWithConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/restaurant/InteractingWithConsole.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/restaurant/Restaurant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/restaurant/Restaurant.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -254,7 +241,14 @@
       <option name="project" value="LOCAL" />
       <updated>1702116554689</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Work write to file, but not finished.">
+      <created>1702135285819</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1702135285819</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -321,7 +315,8 @@
     <MESSAGE value="Working on Login Manager, there are bugs to fix." />
     <MESSAGE value="I wrote part of the order creation code, but not finished." />
     <MESSAGE value="Added logic to add order and edit status, but not finished." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added logic to add order and edit status, but not finished." />
+    <MESSAGE value="Work write to file, but not finished." />
+    <option name="LAST_COMMIT_MESSAGE" value="Work write to file, but not finished." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

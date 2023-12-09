@@ -27,36 +27,33 @@ public class InteractingWithConsole {
     private static User loginedUser = null;
 
     public void restaurantMenageMainMenuInterface(Scanner scanner) {
-        administrator.addUser("1", "Rahmi", "Rahmi123*"); // TODO: 4.12.2023 г. за тест изтрий после
-        administrator.addUser("2", "Saliha", "Saliha123*");// TODO: 4.12.2023 г. за тест изтрий после
+        FileHandler readDataFromFile = new FileHandler(personal);
+        readDataFromFile.updatePersonalDataFromFile();
         String selection;
-        label:
-        while (true) {
-            System.out.println("+------------------------------------------------------------------+");
-            System.out.println("|                  ГУРМЕ РЕСТОРАНТ\"ЕКСПЛОЗИЯ\"                      |");
-            System.out.println("|                   1. Вписване   (Login)                          |");
-            System.out.println("|  За изход от програмата въведете произволен символ или символи.  |");
-            System.out.println("+------------------------------------------------------------------+");
-            if (personal.isEmpty()) {
-                System.out.println("\u001B[31mСистемата няма регистриран персонал.\u001B[0m\n" +
-                        "\u001B[33mЗа да добавите персонал моля се влезте като администратор и създайте сервитьор и готвач.\u001B[0m");
-            }
-            System.out.println("\nВъведете вашия избор: ");
-            selection = scanner.nextLine();
-            switch (selection) {
-                case "1":
-                    interfaceForReadOnLogin(scanner);
-                    return;
-                case "2":
-                    return;
-                default:
-                    System.out.println("Избран изход");
-                    break label;
-            }
+
+        System.out.println("+------------------------------------------------------------------+");
+        System.out.println("|                  ГУРМЕ РЕСТОРАНТ\"ЕКСПЛОЗИЯ\"                      |");
+        System.out.println("|                   1. Вписване   (Login)                          |");
+        System.out.println("|  За изход от програмата въведете произволен символ или символи.  |");
+        System.out.println("+------------------------------------------------------------------+");
+        if (personal.isEmpty()) {
+            System.out.println("\u001B[31mСистемата няма регистриран персонал.\u001B[0m\n" +
+                    "\u001B[33mЗа да добавите персонал моля се влезте като администратор и създайте сервитьор и готвач.\u001B[0m");
+        }
+        System.out.println("\nВъведете вашия избор: ");
+        selection = scanner.nextLine();
+        if (selection.equals("1")) {
+            interfaceForReadOnLogin(scanner);
+        }else {
+            System.out.println("Избран изход");
+            return;
         }
     }
 
+
+
     private void userMenageInterfaceAddUser(Scanner scanner) {
+        FileHandler userdata = new FileHandler(personal);
         String selection;
         label:
         while (true) {
@@ -78,15 +75,15 @@ public class InteractingWithConsole {
                     break;
                 case "3":
                     System.out.println("Моля въведете потребителско име, който искате да премахнете");
-                    String userNameToDelete = scanner.next();
+                    String userNameToDelete = scanner.nextLine();
                     administrator.removeUser(userNameToDelete);
+                    userdata.writeToFile();
                     break;
                 case "4":
                     personal.forEach(System.out::println);
                     break;
                 default:
                     System.out.println("Избран изход");
-                    FileHandler userdata = new FileHandler(personal);
                     userdata.writeToFile();
                     administrator.setLoggedIn(false);
                     restaurantMenageMainMenuInterface(scanner);
@@ -129,7 +126,8 @@ public class InteractingWithConsole {
                 interfaceCook(scanner, loginedUser.getUserName());
             }
         } else {
-            interfaceForReadOnLogin(scanner);;
+            interfaceForReadOnLogin(scanner);
+            ;
         }
     }
 
