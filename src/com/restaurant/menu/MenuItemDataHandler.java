@@ -1,23 +1,23 @@
 package com.restaurant.menu;
 
-import com.restaurant.menu.Product.Base.Product;
-import com.restaurant.menu.Product.Drink;
-import com.restaurant.menu.Product.Food;
+import com.restaurant.menu.MenuItem.Base.MenuItem;
+import com.restaurant.menu.MenuItem.Drink;
+import com.restaurant.menu.MenuItem.Food;
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MealDataHandler {
+public class MenuItemDataHandler {
 
-    private static final String FILE_NAME = "meals.csv";
+    private static final String FILE_NAME = "menuitems.csv";
 
-    public static void addMeal(Product product) {
+    public static void addMeal(MenuItem menuItem) {
         FileWriter fw = null;
 
         try {
             fw = new FileWriter(FILE_NAME, true);
-            fw.write(product.toCSV() + "\n");
+            fw.write(menuItem.toCSV() + "\n");
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
@@ -31,14 +31,14 @@ public class MealDataHandler {
         }
     }
 
-    public static void removeMeal(Product product) {
+    public static void removeMeal(MenuItem menuItem) {
         File inputFile = new File(FILE_NAME);
         File tempFile = new File(FILE_NAME + ".temp");
         File bakFile = new File(FILE_NAME + ".bak");
         BufferedReader br = null;
         BufferedWriter bw = null;
 
-        String lineToSkip = product.toCSV();
+        String lineToSkip = menuItem.toCSV();
 
         try {
             br = new BufferedReader(new FileReader(inputFile));
@@ -78,10 +78,10 @@ public class MealDataHandler {
         }
     }
 
-    public static List<Product> getMeals() {
+    public static List<MenuItem> getMeals() {
         BufferedReader reader = null;
 
-        List<Product> products = new ArrayList<Product>();
+        List<MenuItem> menuItems = new ArrayList<MenuItem>();
 
         try {
             reader = new BufferedReader(new FileReader(FILE_NAME));
@@ -90,11 +90,11 @@ public class MealDataHandler {
                 String[] values = line.split(",");
 
                 switch (values[0]) {
-                    case "Product.Base.Food":
-                        products.add(new Food(values));
+                    case "Food":
+                        menuItems.add(new Food(values));
                         break;
-                    case "Product.Drink":
-                        products.add(new Drink(values));
+                    case "Drink":
+                        menuItems.add(new Drink(values));
                         break;
                     default:
                         System.out.println("Unknown meal of type " + values[0]);
@@ -104,6 +104,6 @@ public class MealDataHandler {
             e.printStackTrace();
         }
 
-        return products;
+        return menuItems;
     }
 }

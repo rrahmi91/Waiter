@@ -1,8 +1,8 @@
 package com.restaurant;
 
-import com.restaurant.menu.Product.Base.Product;
-import com.restaurant.menu.MealDataHandler;
-import com.restaurant.menu.Product.Drink;
+import com.restaurant.menu.MenuItem.Base.MenuItem;
+import com.restaurant.menu.MenuItemDataHandler;
+import com.restaurant.menu.MenuItem.Drink;
 
 import java.util.List;
 
@@ -17,12 +17,12 @@ public class Main {
 
         Drink drink1 = new Drink("tequila",0.50, Drink.Type.ALCOHOL,5.50);
 
-        List<Product> products = MealDataHandler.getMeals();
-        MealDataHandler.addMeal(drink1);
-        MealDataHandler.removeMeal(drink1);
+        List<MenuItem> menuItems = MenuItemDataHandler.getMeals();
+        MenuItemDataHandler.addMeal(drink1);
+        MenuItemDataHandler.removeMeal(drink1);
 
-        for (Product product : products) {
-            System.out.println(product);
+        for (MenuItem menuItem : menuItems) {
+            System.out.println(menuItem);
         }
     }
 }

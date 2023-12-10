@@ -1,9 +1,9 @@
-package com.restaurant.menu.Product;
+package com.restaurant.menu.MenuItem;
 
 
-import com.restaurant.menu.Product.Base.Product;
+import com.restaurant.menu.MenuItem.Base.MenuItem;
 
-public class Food implements Product {
+public class Food implements MenuItem {
     public enum Type {
         MAIN_COURSE,
         DESSERT,
@@ -75,7 +75,7 @@ public class Food implements Product {
 
     @Override
     public String toString() {
-        return "Product.Base.Food {" +
+        return "MenuItem.Base.Food {" +
                 "  name ='" + name + "'," +
                 "  quantity =" + quantity + "," +
                 "  type =" + type.name() + "," +
