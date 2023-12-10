@@ -1,10 +1,9 @@
 package com.restaurant;
 
-import com.restaurant.menu.Product.Base.Meal;
+import com.restaurant.menu.Product.Base.Product;
 import com.restaurant.menu.MealDataHandler;
 import com.restaurant.menu.Product.Drink;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
@@ -18,12 +17,12 @@ public class Main {
 
         Drink drink1 = new Drink("tequila",0.50, Drink.Type.ALCOHOL,5.50);
 
-        List<Meal> meals = new ArrayList<>();
+        List<Product> products = MealDataHandler.getMeals();
         MealDataHandler.addMeal(drink1);
+        MealDataHandler.removeMeal(drink1);
 
-//          MealDataHandler.getMeals();
-//        for (Meal meal : meals) {
-//            System.out.println(meal);
-//        }
+        for (Product product : products) {
+            System.out.println(product);
+        }
     }
 }

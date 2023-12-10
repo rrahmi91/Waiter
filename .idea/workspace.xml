@@ -9,43 +9,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3cb7c4ab-81e7-4cd0-b5ee-3437120d730b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/restaurant/menu/MealDataHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/restaurant/menu/Product/Base/Meal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/restaurant/menu/Product/Drink.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/restaurant/menu/Product/Food.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/meals.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/menu/Alcohol.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/menu/Dessert.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/menu/Dish.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/menu/HotDrinks.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/menu/Juice.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/menu/MainCourse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/menu/Menu.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/menu/Product.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/menu/Salad.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/menu/SoftDrinks.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/menu/Soup.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/menu/Waiter.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/menu/Water.class" beforeDir="false" />
+    <list default="true" id="3cb7c4ab-81e7-4cd0-b5ee-3437120d730b" name="Changes" comment="totally refactored in order to get code shorter">
       <change beforePath="$PROJECT_DIR$/src/com/restaurant/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/restaurant/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/restaurant/menu/Alcohol.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/restaurant/menu/Changeable.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/restaurant/menu/Dessert.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/restaurant/menu/Dish.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/restaurant/menu/Drinks.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/restaurant/menu/HotDrinks.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/restaurant/menu/Juice.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/restaurant/menu/MainCourse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/restaurant/menu/Menu.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/restaurant/menu/Product.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/restaurant/menu/Salad.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/restaurant/menu/SoftDrinks.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/restaurant/menu/Soup.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/restaurant/menu/Waiter.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/restaurant/menu/Water.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -259,7 +224,28 @@
       <option name="project" value="LOCAL" />
       <updated>1702219683906</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="&#10;I created a loginМanager class. Who isn't ready yet.I added some interface methods to the Interaction Console class">
+      <created>1702227090074</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1702227090074</updated>
+    </task>
+    <task id="LOCAL-00014" summary="totally refactored in order to get code shorter">
+      <created>1702227131000</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1702227131000</updated>
+    </task>
+    <task id="LOCAL-00015" summary="totally refactored in order to get code shorter">
+      <created>1702227165392</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1702227165392</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -323,7 +309,8 @@
     <MESSAGE value="Little change.java" />
     <MESSAGE value="Edit the admin class and InteractingWithConsole and make small improvements." />
     <MESSAGE value="&#10;I created a loginМanager class. Who isn't ready yet.I added some interface methods to the Interaction Console class" />
-    <option name="LAST_COMMIT_MESSAGE" value="&#10;I created a loginМanager class. Who isn't ready yet.I added some interface methods to the Interaction Console class" />
+    <MESSAGE value="totally refactored in order to get code shorter" />
+    <option name="LAST_COMMIT_MESSAGE" value="totally refactored in order to get code shorter" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

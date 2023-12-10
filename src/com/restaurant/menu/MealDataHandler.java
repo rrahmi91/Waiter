@@ -1,6 +1,6 @@
 package com.restaurant.menu;
 
-import com.restaurant.menu.Product.Base.Meal;
+import com.restaurant.menu.Product.Base.Product;
 import com.restaurant.menu.Product.Drink;
 import com.restaurant.menu.Product.Food;
 
@@ -12,12 +12,12 @@ public class MealDataHandler {
 
     private static final String FILE_NAME = "meals.csv";
 
-    public static void addMeal(Meal meal) {
+    public static void addMeal(Product product) {
         FileWriter fw = null;
 
         try {
             fw = new FileWriter(FILE_NAME, true);
-            fw.write(meal.toCSV() + "\n");
+            fw.write(product.toCSV() + "\n");
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
@@ -31,14 +31,14 @@ public class MealDataHandler {
         }
     }
 
-    public static void removeMeal(Meal meal) {
+    public static void removeMeal(Product product) {
         File inputFile = new File(FILE_NAME);
         File tempFile = new File(FILE_NAME + ".temp");
         File bakFile = new File(FILE_NAME + ".bak");
         BufferedReader br = null;
         BufferedWriter bw = null;
 
-        String lineToSkip = meal.toCSV();
+        String lineToSkip = product.toCSV();
 
         try {
             br = new BufferedReader(new FileReader(inputFile));
@@ -78,10 +78,10 @@ public class MealDataHandler {
         }
     }
 
-    public static List<Meal> getMeals() {
+    public static List<Product> getMeals() {
         BufferedReader reader = null;
 
-        List<Meal> meals = new ArrayList<Meal>();
+        List<Product> products = new ArrayList<Product>();
 
         try {
             reader = new BufferedReader(new FileReader(FILE_NAME));
@@ -91,10 +91,10 @@ public class MealDataHandler {
 
                 switch (values[0]) {
                     case "Product.Base.Food":
-                        meals.add(new Food(values));
+                        products.add(new Food(values));
                         break;
                     case "Product.Drink":
-                        meals.add(new Drink(values));
+                        products.add(new Drink(values));
                         break;
                     default:
                         System.out.println("Unknown meal of type " + values[0]);
@@ -104,6 +104,6 @@ public class MealDataHandler {
             e.printStackTrace();
         }
 
-        return meals;
+        return products;
     }
 }

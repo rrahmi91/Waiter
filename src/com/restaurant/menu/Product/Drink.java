@@ -1,7 +1,7 @@
 package com.restaurant.menu.Product;
-import com.restaurant.menu.Product.Base.Meal;
+import com.restaurant.menu.Product.Base.Product;
 
-public class Drink implements Meal {
+public class Drink implements Product {
 
     public enum Type {
         SODA,

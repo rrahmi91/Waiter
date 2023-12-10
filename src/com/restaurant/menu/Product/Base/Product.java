@@ -1,5 +1,5 @@
 package com.restaurant.menu.Product.Base;
 
-public interface Meal {
+public interface Product {
     public String toCSV();
 }
