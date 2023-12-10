@@ -38,8 +38,8 @@ public class Waiter extends User implements Addable, Changeable {
         String currentDataAndTimeCreatedOrder = getCurrentDateTime();
         ArrayList<Product> products = new ArrayList<>();
         Order order = new Order(getUserName(), currentDataAndTimeCreatedOrder, "Поръчката е активна", 0.0, OrderStatus.NEW_ORDER, products);
-        products.add(new Alcohol("Bira", 500, "ml", 2.3));
-        products.add(new Salad("Шопска", 680, "гр.", 6.8));
+        products.add(new Alcohol("Bira", 500, 2.3));
+        products.add(new Salad("Шопска", 680, 6.8));
         order.calculateTotalPrice();
 
         return order;

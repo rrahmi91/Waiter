@@ -1,7 +1,6 @@
 package com.restaurant;
 
 import com.restaurant.FileHandler.FileHandler;
-import com.restaurant.menu.Product;
 import com.restaurant.order.Changeable;
 import com.restaurant.order.Order;
 
@@ -11,10 +10,7 @@ import com.restaurant.user.*;
 import com.restaurant.user.UserVerifier.UserVerifier;
 import com.restaurant.userLogin.LoginMenager;
 import com.restaurant.userLogin.Loginable;
-import org.w3c.dom.ls.LSOutput;
 
-import javax.crypto.spec.PSource;
-import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;

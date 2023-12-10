@@ -15,7 +15,7 @@ public class ConsoleMenu {
             System.out.println("Въведете грамаж: ");
             int quantity = Integer.parseInt(scanner.nextLine());
 
-            soup = new Soup(name, price, quantity);
+            soup = new Soup(name,quantity,price);
             break;
         }
         return soup;
@@ -32,7 +32,7 @@ public class ConsoleMenu {
             System.out.println("Въведете грамаж: ");
             int quantity = Integer.parseInt(scanner.nextLine());
 
-            salad = new Salad(name, price, quantity);
+            salad = new Salad(name,quantity,price);
             break;
         }
         return salad;
@@ -48,7 +48,7 @@ public class ConsoleMenu {
             System.out.println("Въведете грамаж: ");
             int quantity = Integer.parseInt(scanner.nextLine());
 
-            mainCourse = new MainCourse(name, price, quantity);
+            mainCourse = new MainCourse(name,quantity,price);
             break;
         }
         return mainCourse;
@@ -64,7 +64,7 @@ public class ConsoleMenu {
             System.out.println("Въведете грамаж: ");
             int quantity = Integer.parseInt(scanner.nextLine());
 
-            dessert = new Dessert(name, price, quantity);
+            dessert = new Dessert(name,quantity,price);
             break;
         }
         return dessert;
@@ -96,7 +96,7 @@ public class ConsoleMenu {
             System.out.print("Въведете цена:");
             double price = Double.parseDouble(scanner.nextLine());
 
-            alcohol = new Alcohol(brand, quantity, price);
+            alcohol = new Alcohol(brand,quantity,price);
             break;
         }
         return alcohol;
@@ -253,4 +253,4 @@ public class ConsoleMenu {
     }
 
 }
-}
+
