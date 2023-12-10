@@ -1,8 +1,8 @@
 package com.restaurant.menu;
 
 public class Alcohol extends Drinks {
-    public Alcohol (String brand, int quantity, String quantityUnit, double price) {
-        super(brand, quantity, quantityUnit, price);
+    public Alcohol (String brand, int quantity, double price) {
+        super(brand, quantity, price);
     }
 
     @Override

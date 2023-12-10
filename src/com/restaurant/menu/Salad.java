@@ -1,8 +1,8 @@
 package com.restaurant.menu;
 
 public class Salad extends Dish {
-    public Salad(String name, int quantity, String quantityUnit, double price) {
-        super(name, quantity, quantityUnit, price);
+    public Salad(String name, int quantity, double price) {
+        super(name, quantity, price);
     }
 
     @Override
