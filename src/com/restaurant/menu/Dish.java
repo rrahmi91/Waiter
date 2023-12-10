@@ -25,4 +25,12 @@ public abstract class Dish extends Product {
     public void setName(String name) {
         this.name = name;
     }
+
+    @Override
+    public String toString() {
+        return "\nЯстие{" +
+                "Име ='" + name + '\'' +
+                ", количество в ='" + quantityUnit + '\'' +
+                "} " + super.toString();
+    }
 }

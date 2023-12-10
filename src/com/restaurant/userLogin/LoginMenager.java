@@ -1,5 +1,6 @@
 package com.restaurant.userLogin;
 
+import com.restaurant.user.Administrator;
 import com.restaurant.user.User;
 import com.restaurant.user.UserType;
 
@@ -42,26 +43,26 @@ public class LoginMenager implements Loginable {
     }
 
     @Override
-    public UserType login(String userNameFromConsole, String passwordFromConsole) {
-        UserType userType = null;
+    public User login(String userNameFromConsole, String passwordFromConsole) {
+        User loginedUser = null;
         if (getUserNameAdministrator().equals(userNameFromConsole) && getPasswordAdministrator().equals(passwordFromConsole)) {
-            userType = UserType.ADMINISTRATOR;
+            loginedUser = new Administrator(userNameFromConsole,passwordFromConsole,UserType.ADMINISTRATOR);
             System.out.println("Успешен вход като администратор: ");
 
         } else {
             for (int i = 0; i < getAllPersonal().size(); i++) {
                 if (getAllPersonal().get(i).getUserName().equals(userNameFromConsole) && getAllPersonal().get(i).getPassword().equals(passwordFromConsole)) {
                     getAllPersonal().get(i).setLoggedIn(true);
-                    userType = getAllPersonal().get(i).getRole();
+                    loginedUser = getAllPersonal().get(i);
                     System.out.println("Успешен вход за потребител: " + getAllPersonal().get(i).getUserName());
                     break;
                 }
             }
         }
-        if (userType == null) {
+        if (loginedUser == null) {
             System.out.println("\u001B[31m Грешно потребителско име или парола\u001B[0m\n");
         }
-        return userType;
+        return loginedUser;
     }
 
     @Override

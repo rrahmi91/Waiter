@@ -1,16 +1,16 @@
 package com.restaurant.menu;
 
-import com.restaurant.user.Addable;
+import com.restaurant.order.Addable;
 import java.util.List;
 
-public class Menu implements Addable {
+public class Menu  {
     List<Product> product;
 
-    @Override public void addProduct() {
+    public void addProduct() {
 
     }
 
-    @Override public void removeProduct() {
+    public void removeProduct() {
 
     }
 }
