@@ -5,14 +5,18 @@ import com.restaurant.menu.Product;
 import com.restaurant.order.Changeable;
 import com.restaurant.order.Order;
 
+import com.restaurant.order.Table;
 import com.restaurant.order.TableStatus;
 import com.restaurant.user.*;
 import com.restaurant.user.UserVerifier.UserVerifier;
 import com.restaurant.userLogin.LoginMenager;
 import com.restaurant.userLogin.Loginable;
+import org.w3c.dom.ls.LSOutput;
 
+import javax.crypto.spec.PSource;
 import java.io.File;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 
@@ -31,25 +35,27 @@ public class InteractingWithConsole {
         readDataFromFile.updatePersonalDataFromFile();
         String selection;
 
-        System.out.println("+------------------------------------------------------------------+");
-        System.out.println("|                  ГУРМЕ РЕСТОРАНТ\"ЕКСПЛОЗИЯ\"                      |");
-        System.out.println("|                   1. Вписване   (Login)                          |");
-        System.out.println("|  За изход от програмата въведете произволен символ или символи.  |");
-        System.out.println("+------------------------------------------------------------------+");
-        if (personal.isEmpty()) {
-            System.out.println("\u001B[31mСистемата няма регистриран персонал.\u001B[0m\n" +
-                    "\u001B[33mЗа да добавите персонал моля се влезте като администратор и създайте сервитьор и готвач.\u001B[0m");
-        }
-        System.out.println("\nВъведете вашия избор: ");
-        selection = scanner.nextLine();
-        if (selection.equals("1")) {
-            interfaceForReadOnLogin(scanner);
-        }else {
-            System.out.println("Избран изход");
-            return;
+        while (true) {
+            System.out.println("+------------------------------------------------------------------+");
+            System.out.println("|                  ГУРМЕ РЕСТОРАНТ\"ЕКСПЛОЗИЯ\"                      |");
+            System.out.println("|                   1. Вписване   (Login)                          |");
+            System.out.println("|  За изход от програмата въведете произволен символ или символи.  |");
+            System.out.println("+------------------------------------------------------------------+");
+            if (personal.isEmpty()) {
+                System.out.println("\u001B[31mСистемата няма регистриран персонал.\u001B[0m\n" +
+                        "\u001B[33mЗа да добавите персонал, моля влезте като администратор и създайте сервитьор и готвач.\u001B[0m");
+            }
+            System.out.println("\nВъведете вашия избор: ");
+            selection = scanner.nextLine();
+
+            if (selection.equals("1")) {
+                interfaceForReadOnLogin(scanner);
+            } else {
+                System.out.println("Избран изход");
+                break;
+            }
         }
     }
-
 
 
     private void userMenageInterfaceAddUser(Scanner scanner) {
@@ -86,7 +92,7 @@ public class InteractingWithConsole {
                     System.out.println("Избран изход");
                     userdata.writeToFile();
                     administrator.setLoggedIn(false);
-                    restaurantMenageMainMenuInterface(scanner);
+                    //restaurantMenageMainMenuInterface(scanner);
                     loginedUser = null;
                     break label;
             }
@@ -127,7 +133,6 @@ public class InteractingWithConsole {
             }
         } else {
             interfaceForReadOnLogin(scanner);
-            ;
         }
     }
 
@@ -217,9 +222,9 @@ public class InteractingWithConsole {
 
     private void interfaceWaiter(Scanner scanner, String activUserName) {
         String selection;
-        int index = findUserIndex(activUserName);
         label:
         while (true) {
+            int index = findUserIndex(activUserName);
             System.out.println("+-------------------------------------------------------------------------------+");
             System.out.println("|                  ГУРМЕ РЕСТОРАНТ\"ЕКСПЛОЗИЯ\"                                   |");
             System.out.println("|                   1. Създаване на поръчка                                     |");
@@ -252,7 +257,6 @@ public class InteractingWithConsole {
                 default:
                     System.out.println("Избран изход");
                     loginable.logOut(activUserName);
-                    restaurantMenageMainMenuInterface(scanner);
                     loginedUser = null;
                     break label;
             }
@@ -279,7 +283,6 @@ public class InteractingWithConsole {
                 editOrderStatusInterface(scanner);
             default:
                 System.out.println("Избран стъпка назад");
-                interfaceWaiter(scanner, loginedUser.getUserName());
         }
     }
 
@@ -291,7 +294,7 @@ public class InteractingWithConsole {
             System.out.println("|                  ГУРМЕ РЕСТОРАНТ\"ЕКСПЛОЗИЯ\"                       |");
             System.out.println("|                   1. Преглед на поръчки                           |");
             System.out.println("|                   2. Редактиране на поръчка                       |");
-            System.out.println("|  За изход от програмата въведете произволен символ или символи.   |");
+            System.out.println("|         За отписване въведете произволен символ или символи.      |");
             System.out.println("+------------------------------------------------------------------+");
             System.out.println("\nВъведете вашия избор: ");
             selection = scanner.nextLine();
@@ -305,17 +308,16 @@ public class InteractingWithConsole {
                 default:
                     System.out.println("Избран изход");
                     loginable.logOut(activUserName);
-                    restaurantMenageMainMenuInterface(scanner);
+                    //restaurantMenageMainMenuInterface(scanner);
                     loginedUser = null;
                     break label;
             }
         }
     }
 
-    private void interfaceCreateOrder(Scanner scanner, Order order) {
+    private void interfaceCreateOrder(Scanner scanner, Order order) { // TODO: 10.12.2023 г.Tova ne  e hubavo tuka da e
         int readTableNumber = readTableNumberFromUser(scanner);
         restaurant.assignOrderToTable(order, readTableNumber);
-        interfaceWaiter(scanner, loginedUser.getUserName());
     }
 
     private int findUserIndex(String userName) {
@@ -338,9 +340,9 @@ public class InteractingWithConsole {
 
     private void editOrderStatusInterface(Scanner scanner) {
         int selectedTableNumber = readTableNumberFromUser(scanner);
-
-        if (selectedTableNumber >= 0 && selectedTableNumber <= restaurant.getTables().size()) {
-            if (restaurant.getTables().get(selectedTableNumber).getTableStatus() != null) {
+        selectedTableNumber = selectedTableNumber - 1;
+        if (selectedTableNumber >= 0 && selectedTableNumber < restaurant.getTables().size()) {
+            if (restaurant.getTables().get(selectedTableNumber).getTableStatus() != null && restaurant.getTables().get(selectedTableNumber).getOrder() != null) {
                 System.out.println(restaurant.getTables().get(selectedTableNumber));
                 updateOrderStatusForTable(scanner, selectedTableNumber);
             } else {
@@ -355,14 +357,17 @@ public class InteractingWithConsole {
         System.out.println("Моля въведете номер на маса");
         String tableNumberReadFromUser = scanner.nextLine();
         return validateInputFromUser(tableNumberReadFromUser);
+
     }
 
     private int validateInputFromUser(String input) {
         try {
             int integerInput = Integer.parseInt(input);
+            integerInput = integerInput - 1;
+
             if (integerInput >= 0 && integerInput <= restaurant.getTables().size()) {
-                if (restaurant.getTables().get(integerInput - 1).getTableStatus() != null) {
-                    return restaurant.getTables().get(integerInput - 1).getTableNumber();
+                if (restaurant.getTables().get(integerInput).getTableStatus() != null) {
+                    return restaurant.getTables().get(integerInput).getTableNumber();
                 } else {
                     System.out.println("В тази маса няма създадена поръчка и не може да се редактира");
                     return -1;
@@ -402,7 +407,12 @@ public class InteractingWithConsole {
     private Order changeOrderStatusBasedOnRole(UserType role, Order order, int selectedStatus) {
 
         if (role.equals(UserType.WAITER)) {
-            return changeableWaiter.changeOrderStatus(order, selectedStatus);
+            Order orderWhoseStatusHasBeenChanged = changeableWaiter.changeOrderStatus(order, selectedStatus);
+            List<Table> newTables = restaurant.removeFinishedOrder(restaurant.getTables());
+            restaurant.setTables(newTables);
+
+            return orderWhoseStatusHasBeenChanged;
+
         } else if (role.equals(UserType.COOK)) {
             return changeableCook.changeOrderStatus(order, selectedStatus);
         } else {
