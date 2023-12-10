@@ -2,6 +2,7 @@ package com.restaurant;
 
 import com.restaurant.FileHandler.FileHandler;
 import com.restaurant.order.Order;
+import com.restaurant.order.OrderStatus;
 import com.restaurant.order.Table;
 import com.restaurant.order.TableStatus;
 
@@ -9,10 +10,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Restaurant {
-    private final List<Table> tables;
+
+    private List<Table> tables;
 
     public List<Table> getTables() {
         return tables;
+    }
+
+    public void setTables(List<Table> tables) {
+        this.tables = tables;
     }
 
     public Restaurant() {
@@ -41,6 +47,18 @@ public class Restaurant {
         } else {
             System.out.println("Не съществуваща маса");
         }
+    }
+
+    public List<Table> removeFinishedOrder(List<Table> tables) {
+        for (Table table : tables) {
+            if (table.getOrder() != null) {
+                if (table.getOrder().getStatus().equals(OrderStatus.PAID)) {
+                    table.setOrder(null);
+                    table.setTableStatus(TableStatus.FREE);
+                }
+            }
+        }
+        return tables;
     }
 
     private Table findTableByNumber(int tableNumber) {

@@ -30,6 +30,7 @@ public class Table {
         this.tableStatus = tableStatus;
     }
 
+
     @Override
     public String toString() {
         return "\n\u001B[36mМаса Номер: " + getTableNumber() +'\'' +"\u001B[0m"+

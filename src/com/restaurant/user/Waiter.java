@@ -24,7 +24,11 @@ public class Waiter extends User implements Addable, Changeable {
     public Order changeOrderStatus(Order order, int selection) {
         switch (selection) {
             case 1 -> order.setStatus(OrderStatus.SERVED);
-            case 2 -> order.setStatus(OrderStatus.PAID);
+            case 2 -> {
+                order.setStatus(OrderStatus.PAID);
+                finishOrder(order);
+                System.out.println(order);
+            }
             default -> System.out.println("Избрахте невалиден статус");
         }
         return order;
@@ -41,11 +45,8 @@ public class Waiter extends User implements Addable, Changeable {
         return order;
     }
 
-    public Order finishOrder(Order order) {
-        changeOrderStatus(order,1);
+    public void finishOrder(Order order) {
         order.setOrderFinishData(getCurrentDateTime());
-        System.out.println(order.getTotalPrice());
-        return order;
     }
 
     @Override

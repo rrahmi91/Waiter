@@ -9,12 +9,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3cb7c4ab-81e7-4cd0-b5ee-3437120d730b" name="Changes" comment="Work write to file, but not finished.">
+    <list default="true" id="3cb7c4ab-81e7-4cd0-b5ee-3437120d730b" name="Changes" comment="Done saving staff. They are written to a file and read on startup from the file.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/User_Data.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/FileHandler/FileHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/FileHandler/FileHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/restaurant/FileHandler/FileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/restaurant/FileHandler/FileHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/InteractingWithConsole.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/InteractingWithConsole.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/Restaurant.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/Restaurant.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/order/Table.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/order/Table.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/user/Waiter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/user/Waiter.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/restaurant/InteractingWithConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/restaurant/InteractingWithConsole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/restaurant/Restaurant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/restaurant/Restaurant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/restaurant/order/Table.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/restaurant/order/Table.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/restaurant/user/Waiter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/restaurant/user/Waiter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -248,12 +252,30 @@
       <option name="project" value="LOCAL" />
       <updated>1702135285819</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Done saving staff. They are written to a file and read on startup from the file.">
+      <created>1702140685327</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1702140685327</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="RECENT_FILTERS">
       <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="user-login-logic-and-interactingWinthConsole" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
         <entry key="User">
           <value>
             <list>
@@ -284,7 +306,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="administrator-class-separation-of-functionalities" />
+                        <option value="user-login-logic-and-interactingWinthConsole" />
                       </list>
                     </value>
                   </entry>
@@ -316,7 +338,8 @@
     <MESSAGE value="I wrote part of the order creation code, but not finished." />
     <MESSAGE value="Added logic to add order and edit status, but not finished." />
     <MESSAGE value="Work write to file, but not finished." />
-    <option name="LAST_COMMIT_MESSAGE" value="Work write to file, but not finished." />
+    <MESSAGE value="Done saving staff. They are written to a file and read on startup from the file." />
+    <option name="LAST_COMMIT_MESSAGE" value="Done saving staff. They are written to a file and read on startup from the file." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
