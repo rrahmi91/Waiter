@@ -9,12 +9,11 @@ import java.util.Scanner;
 
 public class ConsoleMenu {
     Scanner scanner = new Scanner(System.in);
-
-
-
+  
     public void addMenuItem() {
         MenuItem product;
         while (true) {
+
             System.out.println("Моля изберете вид продукт, който искате да добавите:");
             System.out.println("1. Ястие ");
             System.out.println("2. Питие ");
@@ -40,8 +39,7 @@ public class ConsoleMenu {
         System.out.println("Моля изберете: ");
         Drink.Type[] drinkTypes = Drink.Type.values();
 
-        for (int i = 0; i < drinkTypes.length; i++) {
-            System.out.println((i + 1) + ". " + drinkTypes[i].name());
+
         }
 
         int typeChoice = 0;
@@ -165,3 +163,4 @@ public class ConsoleMenu {
         MenuItemDataHandler.addMenuItem(newFood);
     }
 }
+

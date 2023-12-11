@@ -14,17 +14,17 @@ public abstract class User{
     }
 
 
+    public User() {
+        this.userName = "Not entered";
+        this.password = "Not entered";
+        this.role = UserType.ADMINISTRATOR;
+        this.isLoggedIn = false;
+    }
 
     public User(String userName, String password, UserType role) {
         setUserName(userName);
         setPassword(password);
         setRole(role);
-
-    }
-    public User() {
-        this.userName = "Not entered";
-        this.password = "Not entered";
-        this.role = UserType.ADMINISTRATOR;
     }
 
     public String getUserName() {
