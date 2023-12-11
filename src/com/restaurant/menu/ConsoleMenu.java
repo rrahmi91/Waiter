@@ -1,61 +1,24 @@
 package com.restaurant.menu;
 
 import com.restaurant.menu.MenuItem.Base.MenuItem;
+import com.restaurant.menu.MenuItem.Drink;
 import com.restaurant.menu.MenuItem.Food;
 
-import java.util.Properties;
 import java.util.Scanner;
 
-import static com.restaurant.Main.loadTranslations;
-import static com.restaurant.Main.translations;
 
 public class ConsoleMenu {
     Scanner scanner = new Scanner(System.in);
 
-//    public Product addFood() {
-//        Product product = null;
-//        while (true) {
-//            System.out.println("Моля изберете вид ястие, което искате да добавите:");
-//            System.out.println("1. ОСНОВНО");
-//            System.out.println("2. ДЕСЕРТ");
-//            System.out.println("3. СУПА");
-//            System.out.println("4. САЛАТА");
-//            System.out.println("За изход натиснете друго");
-//
-//            String selection = scanner.nextLine();
-//            switch (selection) {
-//                case "1":
-//                    product = addSoup();
-//                    break;
-//                case "2":
-//                    product = addSalad();
-//                    break;
-//                case "3":
-//                    product = addMainCourse();
-//                    break;
-//                case "4":
-//                    product = addDessert();
-//                    break;
-//                default:
-//                    System.out.println("Изход от добавяне на ястие.");
-//                    break;
-//            }
-//            if (product != null) {
-//                System.out.println("Ястие добавено ");
-//                break;
-//            }
-//        }
-//        return product;
-//    }
 
 
     public void addMenuItem() {
         MenuItem product;
         while (true) {
             System.out.println("Моля изберете вид продукт, който искате да добавите:");
-            System.out.println("1. " + translations.getProperty("menu.food"));
-            System.out.println("2. " + translations.getProperty("menu.drink"));
-            System.out.println(translations.getProperty("menu.exit_long"));
+            System.out.println("1. Ястие ");
+            System.out.println("2. Питие ");
+            System.out.println(" ЗА ИЗХОД НАТИСНЕТЕ ПРОИЗВОЛЕН СИМВОЛ");
 
             String selection = scanner.nextLine();
 
@@ -67,95 +30,95 @@ public class ConsoleMenu {
                     addDrink();
                     break;
                 default:
-                    System.out.println(translations.getProperty("menu.exit"));
+                    System.out.println("ИЗХОД");
                     break;
             }
         }
     }
 
     private void addDrink() {
-        System.out.println(translations.getProperty("menu.select_menu_item_type"));
-        Food.Type[] foodTypes = Food.Type.values();
+        System.out.println("Моля изберете: ");
+        Drink.Type[] drinkTypes = Drink.Type.values();
 
-        for (int i = 0; i < foodTypes.length; i++) {
-            System.out.println((i + 1) + ". " + translations.getProperty("food.type." + foodTypes[i].name()));
+        for (int i = 0; i < drinkTypes.length; i++) {
+            System.out.println((i + 1) + ". " + drinkTypes[i].name());
         }
 
         int typeChoice = 0;
         boolean validChoice = false;
         while (!validChoice) {
-            System.out.println(translations.getProperty("menu.select_food_type"));
+            System.out.println("Моля изберете: ");
             try {
                 typeChoice = Integer.parseInt(scanner.nextLine());
-                if (typeChoice >= 1 && typeChoice <= foodTypes.length) {
+                if (typeChoice >= 1 && typeChoice <= drinkTypes.length) {
                     validChoice = true;
                 } else {
-                    System.out.println(translations.getProperty("menu.select_food_type_description") + foodTypes.length);
+                    System.out.println("Моля въведете число между 1 и " + drinkTypes.length);
                 }
             } catch (NumberFormatException e) {
-                System.out.println(translations.getProperty("menu.select_food_type_error"));
+                System.out.println("Грешка! Моля изберете вида на напитката от менюто!");
             }
         }
 
-        Food.Type type = foodTypes[typeChoice - 1];
+        Drink.Type type = drinkTypes[typeChoice - 1];
 
         String name = "";
 
-        while(name.isEmpty()) {
-            System.out.println("Enter food name:");
+        while (name.isEmpty()) {
+            System.out.print("Въведете наименование на напитка : ");
             name = scanner.nextLine();
         }
 
-        int calories = 0;
-        boolean validCalories = false;
-        while (!validCalories) {
-            System.out.println("Enter calories:");
+        int volume = 0;
+        boolean validVolume = false;
+        while (!validVolume) {
+            System.out.print("Въведете грамаж : ");
             try {
-                calories = Integer.parseInt(scanner.nextLine());
-                validCalories = true;
+                volume = Integer.parseInt(scanner.nextLine());
+                validVolume = true;
             } catch (NumberFormatException e) {
-                System.out.println("Please enter a valid number for calories.");
+                System.out.println("Моля въведете количеството коректно.");
             }
         }
 
         double price = 0;
         boolean validPrice = false;
         while (!validPrice) {
-            System.out.println("Enter price:");
+            System.out.println("Въведете цена :");
             try {
                 price = Double.parseDouble(scanner.nextLine());
                 validPrice = true;
             } catch (NumberFormatException e) {
-                System.out.println("Please enter a valid price.");
+                System.out.println("Моля въведете коректно цената.");
             }
         }
 
         scanner.close();
 
-        Food newFood = new Food(name, calories, type, price);
+        Drink newDrink = new Drink(name, volume, type, price);
 
-        MenuItemDataHandler.addMenuItem(newFood);
+        MenuItemDataHandler.addMenuItem(newDrink);
     }
-    }
+
 
     private void addFood() {
-        System.out.println(translations.getProperty("menu.select_menu_item_type"));
+        System.out.println("Моля изберете вид ястие, което искате да добавите:");
         Food.Type[] foodTypes = Food.Type.values();
 
         for (int i = 0; i < foodTypes.length; i++) {
-            System.out.println((i + 1) + ". " + translations.getProperty("food.type." + foodTypes[i].name()));
+            System.out.println((i + 1) + ". " + foodTypes[i].name());
         }
 
         int typeChoice = 0;
         boolean validChoice = false;
         while (!validChoice) {
-            System.out.println(translations.getProperty("menu.select_food_type"));
+            System.out.println("Моля изберете типа храна от менюто!");
             try {
                 typeChoice = Integer.parseInt(scanner.nextLine());
                 if (typeChoice >= 1 && typeChoice <= foodTypes.length) {
                     validChoice = true;
                 } else {
-                    System.out.println(translations.getProperty("menu.select_food_type_description") + foodTypes.length);
+                    System.out.println(translations.getProperty("Моля въведете число между 1 и " + foodTypes.length));
                 }
             } catch (NumberFormatException e) {
                 System.out.println(translations.getProperty("menu.select_food_type_error"));
@@ -166,38 +129,38 @@ public class ConsoleMenu {
 
         String name = "";
 
-        while(name.isEmpty()) {
-            System.out.println("Enter food name:");
+        while (name.isEmpty()) {
+            System.out.println("Въведете наименование на ястие :");
             name = scanner.nextLine();
         }
 
-        int calories = 0;
-        boolean validCalories = false;
-        while (!validCalories) {
-            System.out.println("Enter calories:");
+        int quantity = 0;
+        boolean validQuantity = false;
+        while (!validQuantity) {
+            System.out.println("Въведете грамаж :");
             try {
-                calories = Integer.parseInt(scanner.nextLine());
-                validCalories = true;
+                quantity = Integer.parseInt(scanner.nextLine());
+                validQuantity = true;
             } catch (NumberFormatException e) {
-                System.out.println("Please enter a valid number for calories.");
+                System.out.println("Въведете грамажа коректно.");
             }
         }
-        
+
         double price = 0;
         boolean validPrice = false;
         while (!validPrice) {
-            System.out.println("Enter price:");
+            System.out.println("Въведете цена :");
             try {
                 price = Double.parseDouble(scanner.nextLine());
                 validPrice = true;
             } catch (NumberFormatException e) {
-                System.out.println("Please enter a valid price.");
+                System.out.println("Моля въведете коректно цената.");
             }
         }
 
         scanner.close();
 
-        Food newFood = new Food(name, calories, type, price);
+        Food newFood = new Food(name, quantity, type, price);
 
         MenuItemDataHandler.addMenuItem(newFood);
     }
