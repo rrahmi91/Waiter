@@ -118,10 +118,10 @@ public class ConsoleMenu {
                 if (typeChoice >= 1 && typeChoice <= foodTypes.length) {
                     validChoice = true;
                 } else {
-                    System.out.println(translations.getProperty("Моля въведете число между 1 и " + foodTypes.length));
+                    System.out.println("Моля въведете число между 1 и " + foodTypes.length));
                 }
             } catch (NumberFormatException e) {
-                System.out.println(translations.getProperty("menu.select_food_type_error"));
+                System.out.println("Грешка! Моля изберете вида ястие от менюто!");
             }
         }
 
