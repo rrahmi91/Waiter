@@ -12,7 +12,7 @@ public class MenuItemDataHandler {
 
     private static final String FILE_NAME = "menuitems.csv";
 
-    public static void addMeal(MenuItem menuItem) {
+    public static void addMenuItem(MenuItem menuItem) {
         FileWriter fw = null;
 
         try {
@@ -31,7 +31,7 @@ public class MenuItemDataHandler {
         }
     }
 
-    public static void removeMeal(MenuItem menuItem) {
+    public static void removeMenuItem(MenuItem menuItem) {
         File inputFile = new File(FILE_NAME);
         File tempFile = new File(FILE_NAME + ".temp");
         File bakFile = new File(FILE_NAME + ".bak");
@@ -78,7 +78,7 @@ public class MenuItemDataHandler {
         }
     }
 
-    public static List<MenuItem> getMeals() {
+    public static List<MenuItem> getMenuItems() {
         BufferedReader reader = null;
 
         List<MenuItem> menuItems = new ArrayList<MenuItem>();
@@ -97,7 +97,7 @@ public class MenuItemDataHandler {
                         menuItems.add(new Drink(values));
                         break;
                     default:
-                        System.out.println("Unknown meal of type " + values[0]);
+                        System.out.println("Unknown menu item of type " + values[0]);
                 }
             }
         } catch (Exception e) {

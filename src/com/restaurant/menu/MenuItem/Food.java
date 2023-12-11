@@ -56,14 +56,14 @@ public class Food implements MenuItem {
     }
 
     public String toCSV() {
-        return this.getClass().getName() + "," +
+        return this.getClass().getSimpleName() + "," +
                 getName() + "," +
                 getQuantity() + "," +
                 getType().name();
     }
 
     public Food(String[] values) throws UnsupportedOperationException {
-        if(!values[0].equals(this.getClass().getName())) {
+        if(!values[0].equals(this.getClass().getSimpleName())) {
             throw new UnsupportedOperationException("Wrong object type provided");
         }
 
@@ -75,7 +75,7 @@ public class Food implements MenuItem {
 
     @Override
     public String toString() {
-        return "MenuItem.Base.Food {" +
+        return "Food {" +
                 "  name ='" + name + "'," +
                 "  quantity =" + quantity + "," +
                 "  type =" + type.name() + "," +
