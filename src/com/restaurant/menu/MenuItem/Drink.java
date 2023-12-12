@@ -76,10 +76,11 @@ public class Drink implements MenuItem {
 
     @Override
     public String toString() {
-        return " Drink {\n" +
-                "  name='" + name + "',\n" +
-                "  volume=" + volume + ",\n" +
-                "  type=" + type.name() + ",\n" +
-                "}";
+        return "Drink{" +
+                "name='" + name + '\'' +
+                ", volume=" + volume +
+                ", type=" + type +
+                ", price=" + price +
+                '}';
     }
 }

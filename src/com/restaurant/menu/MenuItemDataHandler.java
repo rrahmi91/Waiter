@@ -18,12 +18,14 @@ public class MenuItemDataHandler {
         try {
             fw = new FileWriter(FILE_NAME, true);
             fw.write(menuItem.toCSV() + "\n");
+            System.out.println("Записан в файла");
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
             if(fw != null) {
                 try {
                     fw.close();
+                    System.out.println("Затворен файл");
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -39,11 +41,9 @@ public class MenuItemDataHandler {
         BufferedWriter bw = null;
 
         String lineToSkip = menuItem.toCSV();
-
         try {
             br = new BufferedReader(new FileReader(inputFile));
             bw = new BufferedWriter(new FileWriter(tempFile));
-
             String line;
 
             while ((line = br.readLine()) != null) {
@@ -106,4 +106,5 @@ public class MenuItemDataHandler {
 
         return menuItems;
     }
+
 }

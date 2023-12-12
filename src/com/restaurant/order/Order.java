@@ -1,7 +1,8 @@
 package com.restaurant.order;
 
-import com.restaurant.menu.Product;
+import com.restaurant.menu.MenuItem.Base.MenuItem;
 
+import java.awt.*;
 import java.util.List;
 
 public class Order implements TotalPriceCalculatible{
@@ -10,15 +11,24 @@ public class Order implements TotalPriceCalculatible{
     private String orderFinishData;
     private double totalPrice;
     private OrderStatus status;
-    private List<Product> products;
+    private List<MenuItem> orderProducts;
 
-    public Order(String waiterUserName, String orderCreateData, String orderFinishData, double totalPrice, OrderStatus status,List<Product>products) {
+
+    public List<MenuItem> getOrderProducts() {
+        return orderProducts;
+    }
+
+    public void setOrderProducts(List<MenuItem> orderProducts) {
+        this.orderProducts = orderProducts;
+    }
+
+    public Order(String waiterUserName, String orderCreateData, String orderFinishData, double totalPrice, OrderStatus status, List<MenuItem>orderProducts) {
         setWaiterUserName(waiterUserName);
         setOrderCreateData(orderCreateData);
         setOrderFinishData(orderFinishData);
         setTotalPrice(totalPrice);
         this.status = status;
-       setProducts(products);
+        setOrderProducts(orderProducts);
     }
     public String getOrderCreateData() {
         return orderCreateData;
@@ -48,7 +58,10 @@ public class Order implements TotalPriceCalculatible{
     }
 
     public void setTotalPrice(double totalPrice) {
-        this.totalPrice = totalPrice;
+        if(totalPrice>0){
+            this.totalPrice = totalPrice;
+        }
+
     }
 
     public OrderStatus getStatus() {
@@ -59,18 +72,16 @@ public class Order implements TotalPriceCalculatible{
         this.status = status;
     }
 
-    public List<Product> getProducts() {
-        return products;
-    }
-
-    public void setProducts(List<Product> products) {
-        this.products = products;
-    }
     @Override
     public void calculateTotalPrice() {
-        for (Product product : products) {
-            setTotalPrice(getTotalPrice()+product.getPrice());
-        }
+//        for (MenuItem product : products) {
+//            setTotalPrice(getTotalPrice()+products;);
+//        }
+
+//        for (int i = 0; i <products.size(); i++) {
+//            products.
+//
+//        }
     }
 
     @Override
@@ -81,9 +92,10 @@ public class Order implements TotalPriceCalculatible{
                 ",\nПриключена на -->'" + orderFinishData + '\'' +
                 ",\nтотална Цена=" + totalPrice +
                 ",\nСтатус на поръчката --> " + status +
-                ",\nПродукти --> " + products +
+                ",\nПродукти --> " + orderProducts +
                 '}';
     }
+
 
 
 }

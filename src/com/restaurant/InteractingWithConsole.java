@@ -1,6 +1,8 @@
 package com.restaurant;
 
 import com.restaurant.FileHandler.FileHandler;
+import com.restaurant.menu.MenuItem.Base.MenuItem;
+import com.restaurant.menu.MenuItemDataHandler;
 import com.restaurant.order.Changeable;
 import com.restaurant.order.Order;
 
@@ -11,6 +13,7 @@ import com.restaurant.user.UserVerifier.UserVerifier;
 import com.restaurant.userLogin.LoginMenager;
 import com.restaurant.userLogin.Loginable;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -132,80 +135,6 @@ public class InteractingWithConsole {
         }
     }
 
-    //***********************************************************************************
-    private void interfaceAddProductToOrder(Scanner scanner) {
-        System.out.println("+----------------------------------------------------------------+");
-        System.out.println("|               ИЗБЕРЕТЕ ЕДИН ОТ СЛЕДНИТЕ ОПЦИИ                   |");
-        System.out.println("|           1. Ястия                                             |");
-        System.out.println("|           2. Питиета                                           |");
-        System.out.println("|  За стъпка назад въведете произволен символ или символи.       |");
-        System.out.println("+----------------------------------------------------------------+");
-        String readResponse = scanner.nextLine();
-        if (readResponse.equals("1")) {
-            interfaceAddDish(scanner);
-        } else if (readResponse.equals("2")) {
-            interfaceAddDrinks(scanner);
-        } else {
-            interfaceWaiter(scanner, loginedUser.getUserName());
-        }
-    }
-
-    private void interfaceAddDish(Scanner scanner) {
-        System.out.println("+----------------------------------------------------------------+");
-        System.out.println("|               ИЗБЕРЕТЕ ЕДИН ОТ СЛЕДНИТЕ ОПЦИИ                   |");
-        System.out.println("|           1. Осноно меню                                       |");
-        System.out.println("|           2. Супа                                              |");
-        System.out.println("|           3. Саладка                                           |");
-        System.out.println("|           4. Десерт                                            |");
-        System.out.println("|  За стъпка назад въведете произволен символ или символи.       |");
-        System.out.println("+----------------------------------------------------------------+");
-        String selection = scanner.nextLine();
-        switch (selection) {
-            case "1":
-                break;
-            case "2":
-                break;
-            case "3":
-
-                break;
-            case "4":
-
-                break;
-            case "5":
-            default:
-                interfaceAddProductToOrder(scanner);
-        }
-    }
-
-    private void interfaceAddDrinks(Scanner scanner) {
-        System.out.println("+----------------------------------------------------------------+");
-        System.out.println("|               ИЗБЕРЕТЕ ЕДИН ОТ СЛЕДНИТЕ ОПЦИИ                   |");
-        System.out.println("|           1. Алкохолни                                         |");
-        System.out.println("|           3. Топли напитки                                     |");
-        System.out.println("|           4. Сокове                                            |");
-        System.out.println("|           5. Води                                              |");
-        System.out.println("|  За стъпка назад въведете произволен символ или символи.       |");
-        System.out.println("+----------------------------------------------------------------+");
-        String selection = scanner.nextLine();
-        switch (selection) {
-            case "1":
-                break;
-            case "2":
-
-                break;
-            case "3":
-
-                break;
-            case "4":
-
-                break;
-            case "5":
-            default:
-                interfaceAddProductToOrder(scanner);
-        }
-    }
-
-    //***********************************************************************************
     private String interfaceForReadOnLoginUsername(Scanner scanner) {
         System.out.println("\t\t\t\"МОЛЯ ВЪВЕДЕТЕ ПОТРЕБИТЕЛСКО ИМЕ\"");
         return scanner.nextLine();
@@ -220,21 +149,21 @@ public class InteractingWithConsole {
         String selection;
         label:
         while (true) {
-            int index = findUserIndex(activUserName);
+            int index = findUserIndex(loginedUser.getUserName());
+            Waiter waiter = (Waiter) personal.get(index);
             System.out.println("+-------------------------------------------------------------------------------+");
             System.out.println("|                  ГУРМЕ РЕСТОРАНТ\"ЕКСПЛОЗИЯ\"                                   |");
             System.out.println("|                   1. Създаване на поръчка                                     |");
             System.out.println("|                   2. Преглед на поръчки                                       |");
             System.out.println("|                   3. Редактиране на поръчка                                   |");
             System.out.println("|                   4. Преглед на меню                                          |");
-            System.out.println("|                   5. Редактиране на меню                                      |");
+            System.out.println("|                   5. Добавяне на продукт в меню                               |");
             System.out.println("|       За отписване въведете произволен символ или символи.                    |");
             System.out.println("+-------------------------------------------------------------------------------+");
             System.out.println("\nВъведете вашия избор: ");
             selection = scanner.nextLine();
             switch (selection) {
                 case "1":
-                    Waiter waiter = (Waiter) personal.get(index);
                     Order newOrder = waiter.createOrder();
                     interfaceCreateOrder(scanner, newOrder);
                     break;
@@ -245,10 +174,17 @@ public class InteractingWithConsole {
                     interfaceWaiterEditOrder(scanner);
                     break;
                 case "4":
-                    // TODO: 4.12.2023 г. Тука ще идва метода преглед на меню
+                    for (int i = 0; i < restaurant.getMenuItems().size(); i++) {
+                        System.out.println(restaurant.getMenuItems().get(i));
+                    }
                     break;
                 case "5":
-                    // TODO: 4.12.2023 г. Тука ще идва метода за редактиране на меню
+                    restaurant.consoleMenu.addMenuItem();
+                    restaurant.setMenuItems(MenuItemDataHandler.getMenuItems());
+                    break;
+                case "6":
+                    restaurant.consoleMenu.();
+                    restaurant.setMenuItems(MenuItemDataHandler.getMenuItems());
                     break;
                 default:
                     System.out.println("Избран изход");
@@ -260,6 +196,8 @@ public class InteractingWithConsole {
     }
 
     private void interfaceWaiterEditOrder(Scanner scanner) {
+        int index = findUserIndex(loginedUser.getUserName());
+        Waiter waiter = (Waiter) personal.get(index);
         System.out.println("+------------------------------------------------------------------+");
         System.out.println("|                  ГУРМЕ РЕСТОРАНТ\"ЕКСПЛОЗИЯ\"                      |");
         System.out.println("|                   1. Добавяне на продтукт                        |");
@@ -271,7 +209,11 @@ public class InteractingWithConsole {
         String selection = scanner.nextLine();
         switch (selection) {
             case "1":
-                break;
+                int tableNumber = readTableNumberFromUser(scanner);
+                restaurant.printMenu();
+                Order order = restaurant.getTables().get(tableNumber).getOrder();
+                List<MenuItem> menuItems = restaurant.getMenuItems();
+                //waiter.addProduct(order,menuItems,);
             case "2":
 
                 break;
@@ -304,7 +246,6 @@ public class InteractingWithConsole {
                 default:
                     System.out.println("Избран изход");
                     loginable.logOut(activUserName);
-                    //restaurantMenageMainMenuInterface(scanner);
                     loginedUser = null;
                     break label;
             }

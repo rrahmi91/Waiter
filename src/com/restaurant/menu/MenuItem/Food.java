@@ -59,7 +59,8 @@ public class Food implements MenuItem {
         return this.getClass().getSimpleName() + "," +
                 getName() + "," +
                 getQuantity() + "," +
-                getType().name();
+                getType().name() + "," +
+                getPrice();
     }
 
     public Food(String[] values) throws UnsupportedOperationException {
@@ -75,10 +76,11 @@ public class Food implements MenuItem {
 
     @Override
     public String toString() {
-        return "Food {" +
-                "  name ='" + name + "'," +
-                "  quantity =" + quantity + "," +
-                "  type =" + type.name() + "," +
-                "}";
+        return "Food{" +
+                "name='" + name + '\'' +
+                ", quantity=" + quantity +
+                ", type=" + type +
+                ", price=" + price +
+                '}';
     }
 }
