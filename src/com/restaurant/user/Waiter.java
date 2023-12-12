@@ -1,10 +1,12 @@
 package com.restaurant.user;
 
 import com.restaurant.menu.MenuItem.Base.MenuItem;
+import com.restaurant.menu.MenuItem.Drink;
 import com.restaurant.menu.MenuItemDataHandler;
 import com.restaurant.order.*;
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static com.restaurant.DateTimeRaider.getCurrentDateTime;
@@ -34,8 +36,7 @@ public class Waiter extends User implements Addable, Changeable {
 
     public Order createOrder() {
         String currentDataAndTimeCreatedOrder = getCurrentDateTime();
-        List<MenuItem> products = MenuItemDataHandler.getMenuItems();
-        Order order = new Order(getUserName(), currentDataAndTimeCreatedOrder, "Поръчката е активна", 0.0, OrderStatus.NEW_ORDER, null);
+        Order order = new Order(getUserName(), currentDataAndTimeCreatedOrder, "Поръчката е активна", 0.0, OrderStatus.NEW_ORDER,null);
         return order;
     }
 
@@ -45,15 +46,18 @@ public class Waiter extends User implements Addable, Changeable {
 
     @Override
     public Order addProduct(Order order, List<MenuItem> menuItems,int indexProduct) {
-        menuItems.get(indexProduct);
+        MenuItem item= menuItems.get(indexProduct);
 
-        //order.;
+        order.addProduct(item);
+
         return order;
     }
 
     @Override
-    public Order removeProduct(Order order, List<Product> products) {
-        return null;
+    public Order removeProduct(Order order,int indexProduct) {
+        order.getOrderProducts().remove(indexProduct);
+
+        return order;
     }
 
 //for (int i = 0; i < menuItems.size(); i++) {

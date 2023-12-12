@@ -135,4 +135,7 @@ public class ConsoleMenu {
         MenuItemDataHandler.addMenuItem(newFood);
 
     }
+    public void removeMenuItem(){
+
+    }
     }

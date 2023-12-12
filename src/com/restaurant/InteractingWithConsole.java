@@ -12,6 +12,7 @@ import com.restaurant.user.*;
 import com.restaurant.user.UserVerifier.UserVerifier;
 import com.restaurant.userLogin.LoginMenager;
 import com.restaurant.userLogin.Loginable;
+import org.w3c.dom.ls.LSOutput;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -158,6 +159,7 @@ public class InteractingWithConsole {
             System.out.println("|                   3. Редактиране на поръчка                                   |");
             System.out.println("|                   4. Преглед на меню                                          |");
             System.out.println("|                   5. Добавяне на продукт в меню                               |");
+            System.out.println("|                   6. Премахване на продукт от меню                            |");
             System.out.println("|       За отписване въведете произволен символ или символи.                    |");
             System.out.println("+-------------------------------------------------------------------------------+");
             System.out.println("\nВъведете вашия избор: ");
@@ -183,8 +185,7 @@ public class InteractingWithConsole {
                     restaurant.setMenuItems(MenuItemDataHandler.getMenuItems());
                     break;
                 case "6":
-                    restaurant.consoleMenu.();
-                    restaurant.setMenuItems(MenuItemDataHandler.getMenuItems());
+                    restaurant.consoleMenu.removeMenuItem();
                     break;
                 default:
                     System.out.println("Избран изход");
@@ -197,6 +198,7 @@ public class InteractingWithConsole {
 
     private void interfaceWaiterEditOrder(Scanner scanner) {
         int index = findUserIndex(loginedUser.getUserName());
+
         Waiter waiter = (Waiter) personal.get(index);
         System.out.println("+------------------------------------------------------------------+");
         System.out.println("|                  ГУРМЕ РЕСТОРАНТ\"ЕКСПЛОЗИЯ\"                      |");
@@ -207,15 +209,25 @@ public class InteractingWithConsole {
         System.out.println("+------------------------------------------------------------------+");
         System.out.println("\nВъведете вашия избор: ");
         String selection = scanner.nextLine();
+        int tableNumber;
         switch (selection) {
             case "1":
-                int tableNumber = readTableNumberFromUser(scanner);
+                tableNumber = readTableNumberFromUser(scanner);
                 restaurant.printMenu();
-                Order order = restaurant.getTables().get(tableNumber).getOrder();
+                Order order = restaurant.getTables().get(tableNumber - 1).getOrder();
                 List<MenuItem> menuItems = restaurant.getMenuItems();
-                //waiter.addProduct(order,menuItems,);
+                int index2=0;
+                for (int i = 0; i < 3; i++) {
+                    index2++;
+                    menuItems.get(index2);
+                    order = waiter.addProduct(order, menuItems, index2);
+                    restaurant.getTables().get(tableNumber).setOrder(order);
+                }
+                break;
             case "2":
-
+                tableNumber = readTableNumberFromUser(scanner);
+                restaurant.getTables().get(tableNumber).setOrder(waiter.removeProduct(restaurant.getTables().get(tableNumber-1).getOrder(),1));
+                System.out.println(restaurant.getTables().get(tableNumber-1).getOrder());
                 break;
             case "3":
                 editOrderStatusInterface(scanner);

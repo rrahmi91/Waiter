@@ -3,6 +3,8 @@ package com.restaurant.order;
 import com.restaurant.menu.MenuItem.Base.MenuItem;
 
 import java.awt.*;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Order implements TotalPriceCalculatible{
@@ -28,7 +30,10 @@ public class Order implements TotalPriceCalculatible{
         setOrderFinishData(orderFinishData);
         setTotalPrice(totalPrice);
         this.status = status;
-        setOrderProducts(orderProducts);
+        this.orderProducts = new ArrayList<>();
+        if (orderProducts != null) {
+            this.orderProducts.addAll(orderProducts);
+        }
     }
     public String getOrderCreateData() {
         return orderCreateData;
@@ -63,7 +68,6 @@ public class Order implements TotalPriceCalculatible{
         }
 
     }
-
     public OrderStatus getStatus() {
         return status;
     }
@@ -71,8 +75,10 @@ public class Order implements TotalPriceCalculatible{
     public void setStatus(OrderStatus status) {
         this.status = status;
     }
-
-    @Override
+    public void addProduct (MenuItem product){
+        this.orderProducts.add(product);
+    }
+        @Override
     public void calculateTotalPrice() {
 //        for (MenuItem product : products) {
 //            setTotalPrice(getTotalPrice()+products;);
@@ -84,18 +90,32 @@ public class Order implements TotalPriceCalculatible{
 //        }
     }
 
-    @Override
+//    @Override
+//    public String toString() {
+//        return "Поръчката e " +
+//                " създаден от сервитьор --> '" + waiterUserName + '\'' +
+//                ",\nСъздадена на --> '" + orderCreateData + '\'' +
+//                ",\nПриключена на -->'" + orderFinishData + '\'' +
+//                ",\nтотална Цена=" + totalPrice +
+//                ",\nСтатус на поръчката --> " + status +
+//                ",\nПродукти --> " + orderProducts +
+//                '}';
+//    }
+
     public String toString() {
-        return "Поръчката e " +
+        StringBuilder result = new StringBuilder("Поръчката e " +
                 " създаден от сервитьор --> '" + waiterUserName + '\'' +
                 ",\nСъздадена на --> '" + orderCreateData + '\'' +
                 ",\nПриключена на -->'" + orderFinishData + '\'' +
                 ",\nтотална Цена=" + totalPrice +
                 ",\nСтатус на поръчката --> " + status +
-                ",\nПродукти --> " + orderProducts +
-                '}';
+                ",\nПродукти --> ");
+
+        for (int i = 0; i < orderProducts.size(); i++) {
+            result.append("\n").append((i + 1)).append(". ").append(orderProducts.get(i));
+        }
+
+        return result.toString();
     }
-
-
 
 }

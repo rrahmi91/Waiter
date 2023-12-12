@@ -9,86 +9,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3cb7c4ab-81e7-4cd0-b5ee-3437120d730b" name="Changes" comment="Done saving staff. They are written to a file and read on startup from the file.">
-      <change afterPath="$PROJECT_DIR$/src/com/restaurant/order/Product.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/com/resturant/order/OrderTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/com/resturant/user/AdministratorTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/com/resturant/user/WaiterTest.java" afterDir="false" />
+    <list default="true" id="3cb7c4ab-81e7-4cd0-b5ee-3437120d730b" name="Changes" comment="add menu item and displayed edited.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/User_Data.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/menuitems.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/menuitems.csv.temp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/DateTimeRaider.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/FileHandler/FileHandler$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/FileHandler/FileHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/FileHandler/FileReadable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/FileHandler/FileWritable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/InteractingWithConsole.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/Restaurant.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/menu/Alcohol.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/menu/ConsoleMenu.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/menu/Dessert.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/menu/Dish.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/menu/Drinks.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/menu/HotDrinks.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/menu/Juice.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/menu/MainCourse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/menu/MealDataHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/menu/MenuItem/Drink$Type.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/menu/MenuItem/Drink.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/menu/MenuItem/Food$Type.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/menu/MenuItem/Food.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/menu/MenuItemDataHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/menu/Product.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/menu/Product/Base/Product.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/menu/Product/Drink$Type.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/menu/Product/Drink.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/menu/Product/Food$Type.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/menu/Product/Food.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/menu/Salad.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/menu/SoftDrinks.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/menu/Soup.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/menu/Water.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/order/Addable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/order/Changeable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/order/Order.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/order/OrderStatus.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/order/Table.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/order/TableStatus.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/order/TotalPriceCalculatible.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/user/Administrator$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/user/Administrator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/user/Cook.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/user/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/user/Waiter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/userLogin/LoginMenager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/userLogin/Loginable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/InteractingWithConsole.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/InteractingWithConsole.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/order/Addable.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/order/Addable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/order/Order.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/order/Order.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/user/Waiter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/user/Waiter.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/restaurant/InteractingWithConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/restaurant/InteractingWithConsole.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/restaurant/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/restaurant/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/restaurant/Restaurant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/restaurant/Restaurant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/restaurant/menu/Alcohol.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/restaurant/menu/ConsoleMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/restaurant/menu/ConsoleMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/restaurant/menu/Dessert.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/restaurant/menu/Dish.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/restaurant/menu/Drinks.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/restaurant/menu/HotDrinks.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/restaurant/menu/Juice.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/restaurant/menu/MainCourse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/restaurant/menu/MenuItem/Base/MenuItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/restaurant/menu/MenuItem/Base/MenuItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/restaurant/menu/MenuItem/Drink.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/restaurant/menu/MenuItem/Drink.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/restaurant/menu/MenuItem/Food.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/restaurant/menu/MenuItem/Food.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/restaurant/menu/MenuItemDataHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/restaurant/menu/MenuItemDataHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/restaurant/menu/Product.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/restaurant/menu/Salad.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/restaurant/menu/SoftDrinks.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/restaurant/menu/Soup.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/restaurant/menu/Waiter.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Waiter.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/restaurant/menu/Water.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/restaurant/order/Addable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/restaurant/order/Addable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/restaurant/order/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/restaurant/order/Order.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/restaurant/user/Waiter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/restaurant/user/Waiter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/waiter.iml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -357,7 +288,14 @@
       <option name="project" value="LOCAL" />
       <updated>1702233079166</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="add menu item and displayed edited.">
+      <created>1702410248266</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1702410248266</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -440,7 +378,8 @@
     <MESSAGE value="Added logic to add order and edit status, but not finished." />
     <MESSAGE value="Work write to file, but not finished." />
     <MESSAGE value="Done saving staff. They are written to a file and read on startup from the file." />
-    <option name="LAST_COMMIT_MESSAGE" value="Done saving staff. They are written to a file and read on startup from the file." />
+    <MESSAGE value="add menu item and displayed edited." />
+    <option name="LAST_COMMIT_MESSAGE" value="add menu item and displayed edited." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -460,6 +399,11 @@
           <line>25</line>
           <option name="timeStamp" value="27" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/restaurant/order/Order.java</url>
+          <line>42</line>
+          <option name="timeStamp" value="31" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/com/restaurant/order/Changeable.java</url>
           <line>3</line>
@@ -468,6 +412,15 @@
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/com/restaurant/menu/ConsoleMenu.java</url>
+          <line>10</line>
+          <properties class="com.restaurant.menu.ConsoleMenu" method="addMenuItem">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="32" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
