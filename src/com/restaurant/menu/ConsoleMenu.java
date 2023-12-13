@@ -26,11 +26,9 @@ public class ConsoleMenu {
             switch (selection) {
                 case "1":
                     addFood();
-                    interactingWithConsole.restaurantMenageMainMenuInterface(scanner);
                     return;
                 case "2":
                     addDrink();
-                    interactingWithConsole.restaurantMenageMainMenuInterface(scanner);
                     return;
                 default:
                     System.out.println("ИЗХОД");

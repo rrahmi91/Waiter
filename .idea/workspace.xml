@@ -11,12 +11,9 @@
   <component name="ChangeListManager">
     <list default="true" id="3cb7c4ab-81e7-4cd0-b5ee-3437120d730b" name="Changes" comment="removeMenuItem method updated">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.temp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/menuitems.csv" beforeDir="false" afterPath="$PROJECT_DIR$/menuitems.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/menuitems.csv.temp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/menu/ConsoleMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/menu/ConsoleMenu.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/menu/MenuItemDataHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/menu/MenuItemDataHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/restaurant/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/restaurant/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/restaurant/menu/ConsoleMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/restaurant/menu/ConsoleMenu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/restaurant/menu/MenuItemDataHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/restaurant/menu/MenuItemDataHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -307,7 +304,14 @@
       <option name="project" value="LOCAL" />
       <updated>1702490182814</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="removeMenuItem method updated">
+      <created>1702495156351</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1702495156351</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -437,7 +441,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/com/restaurant/menu/MenuItemDataHandler.java</url>
-          <line>35</line>
+          <line>38</line>
           <properties class="com.restaurant.menu.MenuItemDataHandler" method="removeMenuItem">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />

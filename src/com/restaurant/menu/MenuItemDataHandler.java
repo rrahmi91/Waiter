@@ -11,9 +11,12 @@ import java.util.List;
 public class MenuItemDataHandler {
 
     private static final String FILE_NAME = "menuitems.csv";
+    private static List<MenuItem> menuItemList = null;
 
     public static void addMenuItem(MenuItem menuItem) {
         FileWriter fw = null;
+
+        menuItemList.add(menuItem);
 
         try {
             fw = new FileWriter(FILE_NAME, true);
@@ -38,6 +41,9 @@ public class MenuItemDataHandler {
         BufferedReader br = null;
 
         String lineToSkip = menuItem.toCSV();
+
+        menuItemList.removeIf(mi -> mi.toCSV().equals(lineToSkip));
+
         System.out.println(lineToSkip);
         StringBuilder stringBuilder = new StringBuilder();
         try {
@@ -65,14 +71,17 @@ public class MenuItemDataHandler {
                 e.printStackTrace();
             }
         }
-
     }
 
 
     public static List<MenuItem> getMenuItems() {
+        if(menuItemList != null) {
+            return menuItemList;
+        }
+
         BufferedReader reader = null;
         FileReader fileReader = null;
-        List<MenuItem> menuItems = new ArrayList<MenuItem>();
+        menuItemList = new ArrayList<MenuItem>();
 
         try {
             fileReader = new FileReader(FILE_NAME);
@@ -83,10 +92,10 @@ public class MenuItemDataHandler {
 
                 switch (values[0]) {
                     case "Food":
-                        menuItems.add(new Food(values));
+                        menuItemList.add(new Food(values));
                         break;
                     case "Drink":
-                        menuItems.add(new Drink(values));
+                        menuItemList.add(new Drink(values));
                         break;
                     default:
                         System.out.println("Unknown menu item of type " + values[0]);
@@ -99,7 +108,7 @@ public class MenuItemDataHandler {
                 try {
                     fileReader.close();
                 } catch (IOException e) {
-                  e.printStackTrace();
+                    e.printStackTrace();
                 }
             }
             if (reader != null) {
@@ -111,7 +120,7 @@ public class MenuItemDataHandler {
             }
         }
 
-        return menuItems;
+        return menuItemList;
     }
 
 }
