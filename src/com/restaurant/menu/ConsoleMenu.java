@@ -1,13 +1,17 @@
 package com.restaurant.menu;
 
 
+import com.restaurant.Restaurant;
 import com.restaurant.menu.MenuItem.Base.MenuItem;
 import com.restaurant.menu.MenuItem.Drink;
 import com.restaurant.menu.MenuItem.Food;
 
 import java.util.Scanner;
+
 public class ConsoleMenu {
+    private final Restaurant restaurant = new Restaurant();
     Scanner scanner = new Scanner(System.in);
+
     public void addMenuItem() {
         MenuItem product;
         while (true) {
@@ -29,6 +33,7 @@ public class ConsoleMenu {
             }
         }
     }
+
     private void addDrink() {
         System.out.println("Моля изберете: ");
         Drink.Type[] drinkTypes = Drink.Type.values();
@@ -81,6 +86,7 @@ public class ConsoleMenu {
         Drink newDrink = new Drink(name, volume, type, price);
         MenuItemDataHandler.addMenuItem(newDrink);
     }
+
     private void addFood() {
         System.out.println("Моля изберете вид ястие, което искате да добавите:");
         Food.Type[] foodTypes = Food.Type.values();
@@ -135,7 +141,13 @@ public class ConsoleMenu {
         MenuItemDataHandler.addMenuItem(newFood);
 
     }
-    public void removeMenuItem(){
+
+    public void removeMenuItem() {
+        System.out.println("Моля изберете продукт от менюто, който искате да премахнете:");
+        restaurant.printMenu();
+        int itemIndex = scanner.nextInt();
+        MenuItem menuItem = restaurant.getMenuItems().get(itemIndex -1);
+        MenuItemDataHandler.removeMenuItem( menuItem);
 
     }
-    }
+}

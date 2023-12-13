@@ -18,7 +18,7 @@ public class MenuItemDataHandler {
         try {
             fw = new FileWriter(FILE_NAME, true);
             fw.write(menuItem.toCSV() + "\n");
-            System.out.println("Записан в файла");
+            System.out.println("Записан във файла");
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
