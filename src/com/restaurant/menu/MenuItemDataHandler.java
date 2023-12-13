@@ -41,6 +41,7 @@ public class MenuItemDataHandler {
         BufferedWriter bw = null;
 
         String lineToSkip = menuItem.toCSV();
+        System.out.println(lineToSkip);
         try {
             br = new BufferedReader(new FileReader(inputFile));
             bw = new BufferedWriter(new FileWriter(tempFile));
@@ -50,9 +51,9 @@ public class MenuItemDataHandler {
                 if (line.equals(lineToSkip)) {
                     continue;
                 }
-
                 bw.write(line);
                 bw.newLine();
+
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -76,7 +77,9 @@ public class MenuItemDataHandler {
         if(!backupFileCreated || !tempFileCopied || !backupFileDeleted) {
             System.out.println("Unable to copy the file");
         }
+
     }
+
 
     public static List<MenuItem> getMenuItems() {
         BufferedReader reader = null;

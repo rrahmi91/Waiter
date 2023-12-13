@@ -12,7 +12,7 @@ import com.restaurant.user.*;
 import com.restaurant.user.UserVerifier.UserVerifier;
 import com.restaurant.userLogin.LoginMenager;
 import com.restaurant.userLogin.Loginable;
-import org.w3c.dom.ls.LSOutput;
+
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -176,16 +176,14 @@ public class InteractingWithConsole {
                     interfaceWaiterEditOrder(scanner);
                     break;
                 case "4":
-                    for (int i = 0; i < restaurant.getMenuItems().size(); i++) {
-                        System.out.println(restaurant.getMenuItems().get(i));
-                    }
+                    restaurant.printMenu();
                     break;
                 case "5":
                     restaurant.consoleMenu.addMenuItem();
                     restaurant.setMenuItems(MenuItemDataHandler.getMenuItems());
                     break;
                 case "6":
-                    restaurant.consoleMenu.removeMenuItem();
+                    restaurant.consoleMenu.removeMenuItem(MenuItemDataHandler.getMenuItems());
                     break;
                 default:
                     System.out.println("Избран изход");
