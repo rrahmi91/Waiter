@@ -1,12 +1,7 @@
 package com.restaurant.user;
 
 import com.restaurant.menu.MenuItem.Base.MenuItem;
-import com.restaurant.menu.MenuItem.Drink;
-import com.restaurant.menu.MenuItemDataHandler;
 import com.restaurant.order.*;
-
-
-import java.util.ArrayList;
 import java.util.List;
 
 import static com.restaurant.DateTimeRaider.getCurrentDateTime;
@@ -42,31 +37,34 @@ public class Waiter extends User implements Addable, Changeable {
 
     public void finishOrder(Order order) {
         order.setOrderFinishData(getCurrentDateTime());
+        order.calculateTotalPrice();
     }
 
     @Override
     public Order addProduct(Order order, List<MenuItem> menuItems,int indexProduct) {
-        MenuItem item= menuItems.get(indexProduct);
-
-        order.addProduct(item);
+        if (indexProduct >= 0 && indexProduct < menuItems.size()) {
+            MenuItem item = menuItems.get(indexProduct);
+            order.addProduct(item);
+            order.calculateTotalPrice();
+        } else {
+            System.out.println("Невалиден индекс за продукт в менюто.");
+        }
 
         return order;
     }
 
     @Override
     public Order removeProduct(Order order,int indexProduct) {
-        order.getOrderProducts().remove(indexProduct);
+        try {
+            order.getOrderProducts().remove(indexProduct);
+            System.out.println("\u001B[32mПродуктът беше успешно премахнат от поръчката.\u001B[0m");
+            order.calculateTotalPrice();
+        } catch (IndexOutOfBoundsException e) {
+            System.out.println("\u001B[31mГрешка: Невалиден индекс за премахване на продукт от поръчката.\u001B[0m");
+
+        }
 
         return order;
-    }
-
-//for (int i = 0; i < menuItems.size(); i++) {
-//            System.out.println("Индекс "+i+" "+menuItems.get(i));
-//        }
-    private MenuItem selectorItemFromMenu(List<MenuItem> menuItems,int indexProduct) {
-         menuItems = MenuItemDataHandler.getMenuItems();
-
-        return menuItems.get(indexProduct);
     }
 
     @Override

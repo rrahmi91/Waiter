@@ -1,3 +1,16 @@
 Food,Шопска,320,SALAD,6.8
-Food,Шопска,320,SALAD,6.8
-Food,пиле с ориз,450,MAIN_COURSE,5.5
+Food,Пиле с ориз,450,MAIN_COURSE,5.5
+Food,Паста Болонезе,400,MAIN_COURSE,7.2
+Food,Цезар с пиле,350,SALAD,8.5
+Food,Пържола с картофено пюре,600,MAIN_COURSE,12.0
+Food,Тирамису,200,DESSERT,4.5
+Food,Супа от домати,300,SOUP,3.0
+Drink,Кока-кола,250,CARBONATED,2.0
+Drink,Чай,300,SODA,1.5
+Drink,Лимонада,200,CARBONATED,2.2
+Drink,Вода,500,WATER,1.0
+Drink,Мохито,350,SODA,3.5
+Drink,Капучино,200,SODA,4.0
+Drink,Краве мляко,400,JUICE,2.8
+Drink,Бира,500,ALCOHOL,4.5
+

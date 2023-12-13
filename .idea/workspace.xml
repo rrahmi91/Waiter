@@ -12,9 +12,30 @@
     <list default="true" id="3cb7c4ab-81e7-4cd0-b5ee-3437120d730b" name="Changes" comment="removeMenuItem method updated">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/menuitems.csv" beforeDir="false" afterPath="$PROJECT_DIR$/menuitems.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/menu/ConsoleMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/menu/ConsoleMenu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/menu/MenuItemDataHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/menu/MenuItemDataHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/restaurant/menu/MenuItemDataHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/restaurant/menu/MenuItemDataHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/FileHandler/FileHandler$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/FileHandler/FileHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/InteractingWithConsole.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/Restaurant.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/menu/ConsoleMenu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/menu/MenuItem/Base/MenuItem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/menu/MenuItem/Drink$Type.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/menu/MenuItem/Drink.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/menu/MenuItem/Food$Type.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/menu/MenuItem/Food.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/menu/MenuItemDataHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/order/Addable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/order/Order.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/order/Product.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/order/Table.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/order/TotalPriceCalculatible.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/user/Waiter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/restaurant/InteractingWithConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/restaurant/InteractingWithConsole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/restaurant/order/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/restaurant/order/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/restaurant/order/Product.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/restaurant/user/Waiter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/restaurant/user/Waiter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/com/resturant/order/OrderTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/com/resturant/user/WaiterTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,11 +166,27 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="OrderTest.testCalculateTotalPriceWithNegativePrices" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Waiter" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.resturant.order.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.resturant.order" />
+      <option name="MAIN_CLASS_NAME" value="com.resturant.order.OrderTest" />
+      <option name="METHOD_NAME" value="testCalculateTotalPriceWithNegativePrices" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.AdministratorTest.testRemoveUserWhenUserExistsThenUserIsRemoved" />
         <item itemvalue="JUnit.OrderTest" />
+        <item itemvalue="JUnit.OrderTest.testCalculateTotalPriceWithNegativePrices" />
         <item itemvalue="JUnit.AdministratorTest.testRemoveUserWhenUserExistsThenUserIsRemoved" />
         <item itemvalue="Application.Main" />
       </list>
@@ -416,11 +453,6 @@
           <line>25</line>
           <option name="timeStamp" value="27" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/restaurant/order/Order.java</url>
-          <line>42</line>
-          <option name="timeStamp" value="31" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/com/restaurant/order/Changeable.java</url>
           <line>3</line>
@@ -429,24 +461,6 @@
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="28" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/com/restaurant/menu/ConsoleMenu.java</url>
-          <line>17</line>
-          <properties class="com.restaurant.menu.ConsoleMenu" method="addMenuItem">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="32" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/com/restaurant/menu/MenuItemDataHandler.java</url>
-          <line>38</line>
-          <properties class="com.restaurant.menu.MenuItemDataHandler" method="removeMenuItem">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="33" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

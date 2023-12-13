@@ -210,22 +210,10 @@ public class InteractingWithConsole {
         int tableNumber;
         switch (selection) {
             case "1":
-                tableNumber = readTableNumberFromUser(scanner);
-                restaurant.printMenu();
-                Order order = restaurant.getTables().get(tableNumber - 1).getOrder();
-                List<MenuItem> menuItems = restaurant.getMenuItems();
-                int index2=0;
-                for (int i = 0; i < 3; i++) {
-                    index2++;
-                    menuItems.get(index2);
-                    order = waiter.addProduct(order, menuItems, index2);
-                    restaurant.getTables().get(tableNumber).setOrder(order);
-                }
+                addProductInterface(scanner, waiter);
                 break;
             case "2":
-                tableNumber = readTableNumberFromUser(scanner);
-                restaurant.getTables().get(tableNumber).setOrder(waiter.removeProduct(restaurant.getTables().get(tableNumber-1).getOrder(),1));
-                System.out.println(restaurant.getTables().get(tableNumber-1).getOrder());
+                removeProductInterface(scanner,waiter);
                 break;
             case "3":
                 editOrderStatusInterface(scanner);
@@ -233,6 +221,81 @@ public class InteractingWithConsole {
                 System.out.println("Избран стъпка назад");
         }
     }
+
+    private void addProductInterface(Scanner scanner, Waiter waiter) {
+        int tableNumber = readTableNumberFromUser(scanner);
+        if (restaurant.getTables().get(tableNumber-1).getTableStatus().equals(TableStatus.OCCUPIED)) {
+            restaurant.printMenu();
+            Order order = restaurant.getTables().get(tableNumber - 1).getOrder();
+            List<MenuItem> menuItems = restaurant.getMenuItems();
+            boolean continueAdding = true;
+
+            while (continueAdding) {
+                System.out.println("Моля изберете продукт от меню или въведете 'q' за изход: ");
+                String input = scanner.nextLine().trim();
+
+                if (input.equals("q")) {
+                    continueAdding = false;
+                } else {
+                    try {
+                        int productIndex = Integer.parseInt(input);
+                        order = waiter.addProduct(order, menuItems, productIndex);
+                        restaurant.getTables().get(tableNumber).setOrder(order);
+                    } catch (NumberFormatException e) {
+                        System.out.println("Не валиден вход. Въведете число или 'q' за изход.");
+                    }
+                }
+            }
+        } else {
+            System.out.println("\u001B[33mКъм тази маса няма създадена поръчка.\u001B[0m");
+
+        }
+
+    }
+
+    private void removeProductInterface(Scanner scanner,Waiter waiter) {
+        int tableNumber = readTableNumberFromUser(scanner);
+        if (restaurant.getTables().get(tableNumber).getOrder() != null && restaurant.getTables().get(tableNumber).getOrder() != null) {
+            Order order = restaurant.getTables().get(tableNumber - 1).getOrder();
+            boolean continueAdding = true;
+
+            while (continueAdding) {
+                System.out.println(restaurant.getTables().get(tableNumber - 1).getOrder());
+                System.out.println("Моля изберете продукт или въведете 'q' за изход: ");
+                String input = scanner.nextLine().trim();
+
+                if (input.equals("q")) {
+                    continueAdding = false;
+                } else {
+                    try {
+                        int productIndex = Integer.parseInt(input);
+                        order = waiter.removeProduct(order, productIndex-1);
+                        restaurant.getTables().get(tableNumber).setOrder(order);
+                    } catch (NumberFormatException e) {
+                        System.out.println("Не валиден вход. Въведете число или 'q' за изход.");
+                    }
+                }
+            }
+        } else {
+            System.out.println("\u001B[33mКъм тази поръчка няма добавени продукти.\u001B[0m");
+        }
+
+    }
+    private void editOrderStatusInterface(Scanner scanner) {
+        int selectedTableNumber = readTableNumberFromUser(scanner);
+        selectedTableNumber = selectedTableNumber - 1;
+        if (selectedTableNumber >= 0 && selectedTableNumber < restaurant.getTables().size()) {
+            if (restaurant.getTables().get(selectedTableNumber).getTableStatus() != null && restaurant.getTables().get(selectedTableNumber).getOrder() != null) {
+                System.out.println(restaurant.getTables().get(selectedTableNumber));
+                updateOrderStatusForTable(scanner, selectedTableNumber);
+            } else {
+                System.out.println("В тази маса няма създадена поръчка и не може да се редактира");
+            }
+        } else {
+            System.out.println("Не съшествуваща маса");
+        }
+    }
+
 
     private void interfaceCook(Scanner scanner, String activUserName) {
         String selection;
@@ -285,20 +348,6 @@ public class InteractingWithConsole {
         }
     }
 
-    private void editOrderStatusInterface(Scanner scanner) {
-        int selectedTableNumber = readTableNumberFromUser(scanner);
-        selectedTableNumber = selectedTableNumber - 1;
-        if (selectedTableNumber >= 0 && selectedTableNumber < restaurant.getTables().size()) {
-            if (restaurant.getTables().get(selectedTableNumber).getTableStatus() != null && restaurant.getTables().get(selectedTableNumber).getOrder() != null) {
-                System.out.println(restaurant.getTables().get(selectedTableNumber));
-                updateOrderStatusForTable(scanner, selectedTableNumber);
-            } else {
-                System.out.println("В тази маса няма създадена поръчка и не може да се редактира");
-            }
-        } else {
-            System.out.println("Не съшествуваща маса");
-        }
-    }
 
     private int readTableNumberFromUser(Scanner scanner) {
         System.out.println("Моля въведете номер на маса");
