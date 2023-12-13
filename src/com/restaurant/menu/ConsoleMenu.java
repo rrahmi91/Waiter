@@ -1,6 +1,7 @@
 package com.restaurant.menu;
 
 
+import com.restaurant.InteractingWithConsole;
 import com.restaurant.Restaurant;
 import com.restaurant.menu.MenuItem.Base.MenuItem;
 import com.restaurant.menu.MenuItem.Drink;
@@ -8,6 +9,8 @@ import com.restaurant.menu.MenuItem.Food;
 
 import java.util.List;
 import java.util.Scanner;
+
+import static com.restaurant.Main.interactingWithConsole;
 
 public class ConsoleMenu {
     Scanner scanner = new Scanner(System.in);
@@ -23,10 +26,12 @@ public class ConsoleMenu {
             switch (selection) {
                 case "1":
                     addFood();
-                    break;
+                    interactingWithConsole.restaurantMenageMainMenuInterface(scanner);
+                    return;
                 case "2":
                     addDrink();
-                    break;
+                    interactingWithConsole.restaurantMenageMainMenuInterface(scanner);
+                    return;
                 default:
                     System.out.println("ИЗХОД");
                     return;

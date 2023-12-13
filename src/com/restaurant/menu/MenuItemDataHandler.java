@@ -22,7 +22,7 @@ public class MenuItemDataHandler {
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
-            if(fw != null) {
+            if (fw != null) {
                 try {
                     fw.close();
                     System.out.println("Затворен файл");
@@ -35,25 +35,19 @@ public class MenuItemDataHandler {
 
     public static void removeMenuItem(MenuItem menuItem) {
         File inputFile = new File(FILE_NAME);
-        File tempFile = new File(FILE_NAME + ".temp");
-        File bakFile = new File(FILE_NAME + ".bak");
         BufferedReader br = null;
-        BufferedWriter bw = null;
 
         String lineToSkip = menuItem.toCSV();
         System.out.println(lineToSkip);
+        StringBuilder stringBuilder = new StringBuilder();
         try {
             br = new BufferedReader(new FileReader(inputFile));
-            bw = new BufferedWriter(new FileWriter(tempFile));
             String line;
-
             while ((line = br.readLine()) != null) {
                 if (line.equals(lineToSkip)) {
                     continue;
                 }
-                bw.write(line);
-                bw.newLine();
-
+                stringBuilder.append(line).append("\n");
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -61,21 +55,15 @@ public class MenuItemDataHandler {
             try {
                 if (br != null) {
                     br.close();
-                }
-                if (bw != null) {
-                    bw.close();
+                    String newFileContents = stringBuilder.toString();
+                    FileWriter fileWriterName = new FileWriter(FILE_NAME, false);
+                    PrintWriter out = new PrintWriter(fileWriterName);
+                    out.print(newFileContents);
+                    out.close();
                 }
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        }
-
-        boolean backupFileCreated = inputFile.renameTo(bakFile);
-        boolean tempFileCopied = tempFile.renameTo(inputFile);
-        boolean backupFileDeleted = bakFile.delete();
-
-        if(!backupFileCreated || !tempFileCopied || !backupFileDeleted) {
-            System.out.println("Unable to copy the file");
         }
 
     }
@@ -83,11 +71,12 @@ public class MenuItemDataHandler {
 
     public static List<MenuItem> getMenuItems() {
         BufferedReader reader = null;
-
+        FileReader fileReader = null;
         List<MenuItem> menuItems = new ArrayList<MenuItem>();
 
         try {
-            reader = new BufferedReader(new FileReader(FILE_NAME));
+            fileReader = new FileReader(FILE_NAME);
+            reader = new BufferedReader(fileReader);
             String line;
             while ((line = reader.readLine()) != null) {
                 String[] values = line.split(",");
@@ -105,6 +94,21 @@ public class MenuItemDataHandler {
             }
         } catch (Exception e) {
             e.printStackTrace();
+        } finally {
+            if (fileReader != null) {
+                try {
+                    fileReader.close();
+                } catch (IOException e) {
+                  e.printStackTrace();
+                }
+            }
+            if (reader != null) {
+                try {
+                    reader.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
         }
 
         return menuItems;
