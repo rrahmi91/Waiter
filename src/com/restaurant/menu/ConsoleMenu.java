@@ -145,7 +145,17 @@ public class ConsoleMenu {
     public void removeMenuItem() {
         System.out.println("Моля изберете продукт от менюто, който искате да премахнете:");
         restaurant.printMenu();
-        int itemIndex = scanner.nextInt();
+        int itemIndex = 0;
+        boolean indexChoice = false;
+        while (!indexChoice) {
+        try {
+            itemIndex = Integer.parseInt(scanner.nextLine());
+            indexChoice = true;
+        } catch (NumberFormatException e) {
+            System.out.println("Въведете коректно номера на продукта от менюто. ");
+        }
+    }
+
         MenuItem menuItem = restaurant.getMenuItems().get(itemIndex -1);
         MenuItemDataHandler.removeMenuItem( menuItem);
 

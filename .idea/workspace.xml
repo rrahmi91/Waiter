@@ -9,10 +9,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3cb7c4ab-81e7-4cd0-b5ee-3437120d730b" name="Changes" comment="add menu item and displayed edited.">
+    <list default="true" id="3cb7c4ab-81e7-4cd0-b5ee-3437120d730b" name="Changes" comment="removeMenuItem method updated">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/menu/ConsoleMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/menu/ConsoleMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/menu/MenuItemDataHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/menu/MenuItemDataHandler.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/restaurant/menu/ConsoleMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/restaurant/menu/ConsoleMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/restaurant/menu/MenuItemDataHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/restaurant/menu/MenuItemDataHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -288,7 +289,14 @@
       <option name="project" value="LOCAL" />
       <updated>1702410248266</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="removeMenuItem method updated">
+      <created>1702480393884</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1702480393884</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -372,7 +380,8 @@
     <MESSAGE value="Work write to file, but not finished." />
     <MESSAGE value="Done saving staff. They are written to a file and read on startup from the file." />
     <MESSAGE value="add menu item and displayed edited." />
-    <option name="LAST_COMMIT_MESSAGE" value="add menu item and displayed edited." />
+    <MESSAGE value="removeMenuItem method updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="removeMenuItem method updated" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
