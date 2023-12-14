@@ -14,7 +14,6 @@ import com.restaurant.userLogin.LoginMenager;
 import com.restaurant.userLogin.Loginable;
 
 
-import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -325,7 +324,7 @@ public class InteractingWithConsole {
         }
     }
 
-    private void interfaceCreateOrder(Scanner scanner, Order order) { // TODO: 10.12.2023 г.Tova ne  e hubavo tuka da e
+    private void interfaceCreateOrder(Scanner scanner, Order order) {
         int readTableNumber = readTableNumberFromUser(scanner);
         restaurant.assignOrderToTable(order, readTableNumber);
     }

@@ -1,10 +1,11 @@
 package com.resturant.user;
 
 import com.restaurant.user.Administrator;
-import com.restaurant.user.User;
+
 import com.restaurant.user.UserType;
 import com.restaurant.user.Waiter;
 import org.junit.jupiter.api.Test;
+
 
 import java.util.ArrayList;
 

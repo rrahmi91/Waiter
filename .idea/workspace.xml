@@ -9,33 +9,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3cb7c4ab-81e7-4cd0-b5ee-3437120d730b" name="Changes" comment="removeMenuItem method updated">
+    <list default="true" id="3cb7c4ab-81e7-4cd0-b5ee-3437120d730b" name="Changes" comment="bug removal">
+      <change afterPath="$PROJECT_DIR$/test/com/resturant/menu/MenuItemDataHandlerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/com/resturant/order/OrderTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/com/resturant/user/TestCook.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/com/resturant/user/WaiterTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Waiter.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Waiter.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/menuitems.csv" beforeDir="false" afterPath="$PROJECT_DIR$/menuitems.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/FileHandler/FileHandler$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/FileHandler/FileHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/InteractingWithConsole.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/Restaurant.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/menu/ConsoleMenu.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/menu/MenuItem/Base/MenuItem.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/menu/MenuItem/Drink$Type.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/menu/MenuItem/Drink.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/menu/MenuItem/Food$Type.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/menu/MenuItem/Food.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/menu/MenuItemDataHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/order/Addable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/order/Order.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/order/Product.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/order/Table.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/order/TotalPriceCalculatible.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/user/Waiter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/InteractingWithConsole.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/InteractingWithConsole.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/order/Order.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/order/Order.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Waiter/com/resturant/order/OrderTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Waiter/com/resturant/order/OrderTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Waiter/com/resturant/user/AdministratorTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Waiter/com/resturant/user/AdministratorTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Waiter/com/resturant/user/WaiterTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Waiter/com/resturant/user/WaiterTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/restaurant/InteractingWithConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/restaurant/InteractingWithConsole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/restaurant/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/restaurant/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/restaurant/menu/MenuItemDataHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/restaurant/menu/MenuItemDataHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/restaurant/order/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/restaurant/order/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/restaurant/order/Product.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/restaurant/user/Waiter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/restaurant/user/Waiter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/com/resturant/order/OrderTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/com/resturant/user/WaiterTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/com/resturant/user/AdministratorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/com/resturant/user/AdministratorTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,7 +119,7 @@
       <module name="Waiter" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.restaurant.FileHandler.*" />
+          <option name="PATTERN" value="com.restaurant.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -135,18 +127,47 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AdministratorTest.testRemoveUserWhenUserExistsThenUserIsRemoved" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CookTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Waiter" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.restaurant.FileHandler.*" />
+          <option name="PATTERN" value="com.resturant.user.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.resturant.user" />
+      <option name="MAIN_CLASS_NAME" value="com.resturant.user.CookTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CookTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Waiter" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.restaurant.user.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.restaurant.user" />
-      <option name="MAIN_CLASS_NAME" value="com.restaurant.user.AdministratorTest" />
-      <option name="METHOD_NAME" value="testRemoveUserWhenUserExistsThenUserIsRemoved" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="com.restaurant.user.CookTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MenuItemDataHandlerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Waiter" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.resturant.menu.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.resturant.menu" />
+      <option name="MAIN_CLASS_NAME" value="com.resturant.menu.MenuItemDataHandlerTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -166,29 +187,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OrderTest.testCalculateTotalPriceWithNegativePrices" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Waiter" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.resturant.order.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.resturant.order" />
-      <option name="MAIN_CLASS_NAME" value="com.resturant.order.OrderTest" />
-      <option name="METHOD_NAME" value="testCalculateTotalPriceWithNegativePrices" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.MenuItemDataHandlerTest" />
         <item itemvalue="JUnit.OrderTest" />
-        <item itemvalue="JUnit.OrderTest.testCalculateTotalPriceWithNegativePrices" />
-        <item itemvalue="JUnit.AdministratorTest.testRemoveUserWhenUserExistsThenUserIsRemoved" />
-        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.CookTest (1)" />
+        <item itemvalue="JUnit.CookTest" />
       </list>
     </recent_temporary>
   </component>
@@ -348,7 +353,14 @@
       <option name="project" value="LOCAL" />
       <updated>1702495156351</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="bug removal">
+      <created>1702509581886</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1702509581886</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -433,7 +445,8 @@
     <MESSAGE value="Done saving staff. They are written to a file and read on startup from the file." />
     <MESSAGE value="add menu item and displayed edited." />
     <MESSAGE value="removeMenuItem method updated" />
-    <option name="LAST_COMMIT_MESSAGE" value="removeMenuItem method updated" />
+    <MESSAGE value="bug removal" />
+    <option name="LAST_COMMIT_MESSAGE" value="bug removal" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -448,11 +461,6 @@
           <line>28</line>
           <option name="timeStamp" value="19" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/restaurant/order/Table.java</url>
-          <line>25</line>
-          <option name="timeStamp" value="27" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/com/restaurant/order/Changeable.java</url>
           <line>3</line>
@@ -462,12 +470,45 @@
           </properties>
           <option name="timeStamp" value="28" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/com/restaurant/order/Table.java</url>
+          <line>34</line>
+          <properties class="com.restaurant.order.Table" method="toString">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="38" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.github.evgenys91.machinet.common.dslhistory.DslHistoryState">
     <option name="historyDtoById">
       <map>
+        <entry key="2dd2c0">
+          <value>
+            <ChatHistoryModel>
+              <option name="contextFilesPaths">
+                <list>
+                  <option value="$PROJECT_DIR$/test/com/resturant/user/WaiterTest.java" />
+                </list>
+              </option>
+              <option name="id" value="2dd2c0" />
+              <option name="initiateTms" value="1702564548149" />
+              <option name="request" value="The file contains the following errors and warnings:&#10;- Private inner class 'MenuItemStub' is never used for line &quot;private static class MenuItemStub implements MenuItem {&quot;&#10;- Constructor 'MenuItemStub(java.lang.String, int, double)' is never used for line &quot;public MenuItemStub(String name, int quantity, double price) {&quot;" />
+              <option name="response" value="" />
+              <option name="responseDescription" value="To fix the errors and warnings in the `WaiterTest.java` file, you can remove the unused private inner class `MenuItemStub` and its constructor. Here's the modified code:&#10;&#10;```java&#10;package com.resturant.user;&#10;&#10;import com.restaurant.menu.MenuItem.Base.MenuItem;&#10;import com.restaurant.order.Order;&#10;import com.restaurant.order.OrderStatus;&#10;import com.restaurant.user.UserType;&#10;import com.restaurant.user.Waiter;&#10;import org.junit.jupiter.api.Test;&#10;import static org.junit.jupiter.api.Assertions.*;&#10;&#10;class WaiterTest {&#10;&#10;    @Test&#10;    void testCreateWaiter() {&#10;        // GIVEN&#10;        Waiter waiter = new Waiter(&quot;Rahmi&quot;, &quot;password&quot;, UserType.WAITER);&#10;&#10;        // THEN&#10;        assertEquals(&quot;Rahmi&quot;, waiter.getUserName());&#10;        assertEquals(&quot;password&quot;, waiter.getPassword());&#10;        assertEquals(UserType.WAITER, waiter.getRole());&#10;    }&#10;&#10;    @Test&#10;    void testChangeOrderStatusServe() {&#10;        // GIVEN&#10;        Waiter waiter = new Waiter(&quot;Rahmi&quot;, &quot;password&quot;, UserType.WAITER);&#10;        Order order = waiter.createOrder();&#10;&#10;        // WHEN&#10;        Order updatedOrder = waiter.changeOrderStatus(order, 1);&#10;&#10;        // THEN&#10;        assertEquals(OrderStatus.SERVED, updatedOrder.getStatus());&#10;    }&#10;&#10;}&#10;```&#10;&#10;By removing the unused private inner class `MenuItemStub` and its constructor, you eliminate the errors and warnings related to those unused elements. The remaining code in the `WaiterTest` class should work correctly without any issues." />
+              <option name="responseFileName" value="" />
+              <option name="responseFilePath" value="" />
+              <option name="responseTms" value="1702564555265" />
+              <option name="usedLocalFilePaths">
+                <list>
+                  <option value="$PROJECT_DIR$/test/com/resturant/user/WaiterTest.java" />
+                </list>
+              </option>
+            </ChatHistoryModel>
+          </value>
+        </entry>
         <entry key="4f820c">
           <value>
             <ChatHistoryModel>

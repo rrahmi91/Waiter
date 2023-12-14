@@ -3,10 +3,7 @@ package com.restaurant.order;
 import com.restaurant.menu.MenuItem.Base.MenuItem;
 import com.restaurant.menu.MenuItem.Drink;
 import com.restaurant.menu.MenuItem.Food;
-
-import java.awt.*;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class Order implements TotalPriceCalculatible {
