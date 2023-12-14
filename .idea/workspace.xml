@@ -10,24 +10,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3cb7c4ab-81e7-4cd0-b5ee-3437120d730b" name="Changes" comment="bug removal">
-      <change afterPath="$PROJECT_DIR$/test/com/resturant/menu/MenuItemDataHandlerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/com/resturant/order/OrderTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/com/resturant/user/TestCook.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/com/resturant/user/WaiterTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/com/resturant/DataTimeRaiderTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/com/resturant/RestaurantTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/com/resturant/userLogin/LoginMenagerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/com/resturant/userLogin/UserVerification/UserVerifierTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Waiter.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Waiter.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/menuitems.csv" beforeDir="false" afterPath="$PROJECT_DIR$/menuitems.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/InteractingWithConsole.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/InteractingWithConsole.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/order/Order.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/order/Order.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/Restaurant.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/Restaurant.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/menu/ConsoleMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Waiter/com/restaurant/menu/ConsoleMenu.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/test/Waiter/com/resturant/order/OrderTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Waiter/com/resturant/order/OrderTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Waiter/com/resturant/user/AdministratorTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Waiter/com/resturant/user/AdministratorTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Waiter/com/resturant/user/WaiterTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Waiter/com/resturant/user/WaiterTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/restaurant/InteractingWithConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/restaurant/InteractingWithConsole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Waiter/com/resturant/user/CookTest.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/restaurant/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/restaurant/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/restaurant/Restaurant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/restaurant/Restaurant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/restaurant/menu/ConsoleMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/restaurant/menu/ConsoleMenu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/restaurant/menu/MenuItemDataHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/restaurant/menu/MenuItemDataHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/restaurant/order/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/restaurant/order/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/com/resturant/user/AdministratorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/com/resturant/user/AdministratorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/com/resturant/menu/MenuItemDataHandlerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/com/resturant/user/TestCook.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/com/resturant/user/TestCook.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,62 +126,65 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CookTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RestaurantTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Waiter" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.resturant.user.*" />
+          <option name="PATTERN" value="com.resturant.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.resturant.user" />
-      <option name="MAIN_CLASS_NAME" value="com.resturant.user.CookTest" />
+      <option name="PACKAGE_NAME" value="com.resturant" />
+      <option name="MAIN_CLASS_NAME" value="com.resturant.RestaurantTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CookTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RestaurantTest.testAssignOrderToOccupiedTable" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Waiter" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.restaurant.user.*" />
+          <option name="PATTERN" value="com.resturant.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.restaurant.user" />
-      <option name="MAIN_CLASS_NAME" value="com.restaurant.user.CookTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="com.resturant" />
+      <option name="MAIN_CLASS_NAME" value="com.resturant.RestaurantTest" />
+      <option name="METHOD_NAME" value="testAssignOrderToOccupiedTable" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MenuItemDataHandlerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RestaurantTest.testAssignOrderToTable" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Waiter" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.resturant.menu.*" />
+          <option name="PATTERN" value="com.resturant.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.resturant.menu" />
-      <option name="MAIN_CLASS_NAME" value="com.resturant.menu.MenuItemDataHandlerTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="com.resturant" />
+      <option name="MAIN_CLASS_NAME" value="com.resturant.RestaurantTest" />
+      <option name="METHOD_NAME" value="testAssignOrderToTable" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OrderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RestaurantTest.testRemoveFinishedOrder" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Waiter" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.resturant.order.*" />
+          <option name="PATTERN" value="com.resturant.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.resturant.order" />
-      <option name="MAIN_CLASS_NAME" value="com.resturant.order.OrderTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="com.resturant" />
+      <option name="MAIN_CLASS_NAME" value="com.resturant.RestaurantTest" />
+      <option name="METHOD_NAME" value="testRemoveFinishedOrder" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -190,10 +192,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.MenuItemDataHandlerTest" />
-        <item itemvalue="JUnit.OrderTest" />
-        <item itemvalue="JUnit.CookTest (1)" />
-        <item itemvalue="JUnit.CookTest" />
+        <item itemvalue="JUnit.RestaurantTest" />
+        <item itemvalue="JUnit.RestaurantTest.testRemoveFinishedOrder" />
+        <item itemvalue="JUnit.RestaurantTest.testAssignOrderToOccupiedTable" />
+        <item itemvalue="JUnit.RestaurantTest.testAssignOrderToTable" />
       </list>
     </recent_temporary>
   </component>
@@ -360,7 +362,14 @@
       <option name="project" value="LOCAL" />
       <updated>1702509581886</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="bug removal">
+      <created>1702569044884</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1702569044884</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -461,6 +470,11 @@
           <line>28</line>
           <option name="timeStamp" value="19" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/test/com/resturant/userLogin/UserVerification/UserVerifierTest.java</url>
+          <line>29</line>
+          <option name="timeStamp" value="39" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/com/restaurant/order/Changeable.java</url>
           <line>3</line>
@@ -478,6 +492,15 @@
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="38" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/test/com/resturant/RestaurantTest.java</url>
+          <line>51</line>
+          <properties class="com.resturant.RestaurantTest" method="testRemoveFinishedOrder">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="40" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

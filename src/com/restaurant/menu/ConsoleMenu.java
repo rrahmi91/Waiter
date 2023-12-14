@@ -1,22 +1,13 @@
 package com.restaurant.menu;
-
-
-import com.restaurant.InteractingWithConsole;
-import com.restaurant.Restaurant;
 import com.restaurant.menu.MenuItem.Base.MenuItem;
 import com.restaurant.menu.MenuItem.Drink;
 import com.restaurant.menu.MenuItem.Food;
-
 import java.util.List;
-import java.util.Scanner;
-
-import static com.restaurant.Main.interactingWithConsole;
+import static com.restaurant.Main.scanner;
 
 public class ConsoleMenu {
-    Scanner scanner = new Scanner(System.in);
 
     public void addMenuItem() {
-        MenuItem product;
         while (true) {
             System.out.println("Моля изберете вид продукт, който искате да добавите:");
             System.out.println("1. Ястие ");

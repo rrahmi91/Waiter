@@ -28,7 +28,6 @@ public class MenuItemDataHandler {
             if (fw != null) {
                 try {
                     fw.close();
-                    System.out.println("Затворен файл");
                 } catch (IOException e) {
                     e.printStackTrace();
                 }

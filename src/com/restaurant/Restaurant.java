@@ -71,7 +71,7 @@ public class Restaurant {
         return tables;
     }
 
-    private Table findTableByNumber(int tableNumber) {
+    public Table findTableByNumber(int tableNumber) {
         return tables.stream()
                 .filter(table -> table.getTableNumber() == tableNumber)
                 .findFirst()
